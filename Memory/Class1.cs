@@ -84,7 +84,8 @@ namespace Memory
 
             }
             //Hier moet de randomizer komen
-            return images;
+            return Shuffle(images);
+            
 
         }
         //Zorgt voor het meegeven van een nieuwe source en zorgt voor het omdraaien van het vraagteken
@@ -93,6 +94,23 @@ namespace Memory
             Image card = (Image)sender;
             ImageSource front = (ImageSource)card.Tag;
             card.Source = front;
+        }
+        //De functie zorgt voor het randomizen van de eerder aangemaakte list met daarin de source, tag en klik-functie
+        
+
+        private List<ImageSource> Shuffle(List<ImageSource>imageList)
+        {
+            Random randomizer = new Random();
+        int n = imageList.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = randomizer.Next(n + 1);
+                ImageSource value = imageList[k];
+                imageList[k] = imageList[n];
+                imageList[n] = value;
+            }
+            return imageList;
         }
     }
 }
