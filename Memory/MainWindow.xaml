@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Memory"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid x:Name="Gamegrid">
-        
+        Title="MainWindow" Background="#FFD69E9E" Height="882" Width="1489" Visibility="Visible">
+    <Grid x:Name="Page" HorizontalAlignment="Left" Height="847" VerticalAlignment="Top" Width="1479" Background="#FFF74BFF">
+        <Grid x:Name="Gamegrid" Margin="0,0,227,-1" Background="White"/>
+        <Button Content="Hoofdmenu" HorizontalAlignment="Left" Height="55" Margin="1265,782,0,0" VerticalAlignment="Top" Width="204" Background="#FFD899E2">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="Opslaan" HorizontalAlignment="Left" Height="55" Margin="1265,722,0,0" VerticalAlignment="Top" Width="204" Background="#FFD899E2">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="Highscore" HorizontalAlignment="Left" Height="55" Margin="1265,662,0,0" VerticalAlignment="Top" Width="204" Background="#FFD899E2">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Label Content="HIER&#xD;&#xA;KOMT &#xD;&#xA;DE &#xD;&#xA;HIGH&#xD;&#xA;SCORE&#xD;&#xA;" HorizontalAlignment="Left" Height="420" Margin="1265,185,0,0" VerticalAlignment="Top" Width="204" Background="#FFCD2D2D" FontSize="48"/>
+        <Label Content="TITEL" HorizontalAlignment="Left" Height="120" Margin="1265,25,0,0" VerticalAlignment="Top" Width="204" Background="#FFCD2D2D" FontSize="48"/>
+
     </Grid>
 </Window>
