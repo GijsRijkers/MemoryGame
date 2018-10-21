@@ -23,8 +23,10 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Label Content="HIER&#xD;&#xA;KOMT &#xD;&#xA;DE &#xD;&#xA;HIGH&#xD;&#xA;SCORE&#xD;&#xA;" HorizontalAlignment="Left" Height="420" Margin="1265,185,0,0" VerticalAlignment="Top" Width="204" Background="#FFCD2D2D" FontSize="48"/>
+        <Label Content="HIER&#xD;&#xA;KOMT &#xD;&#xA;DE &#xD;&#xA;HIGH&#xD;&#xA;SCORE&#xD;&#xA;" HorizontalAlignment="Left" Height="322" Margin="1265,309,0,0" VerticalAlignment="Top" Width="182" Background="#FFCD2D2D" FontSize="48"/>
         <Label Content="TITEL" HorizontalAlignment="Left" Height="120" Margin="1265,25,0,0" VerticalAlignment="Top" Width="204" Background="#FFCD2D2D" FontSize="48"/>
+        <TextBlock x:Name="TBCountDown" HorizontalAlignment="Right" Margin="0,177,66,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="60" Width="131" FontSize="26" FontFamily="Segoe UI Light"></TextBlock>
+
 
     </Grid>
 </Window>
