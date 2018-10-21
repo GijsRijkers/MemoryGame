@@ -40,13 +40,13 @@ namespace Memory
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if (time > 10)
+            if (time > 0)
             {
                 if(time <= 10)
                 {
                     if (time % 2 == 0)
                     {
-                        TBCountDown.Foreground = Brushes.Yellow;
+                        TBCountDown.Foreground = Brushes.Red;
                     }
                     else
                     {
