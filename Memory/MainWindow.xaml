@@ -18,21 +18,14 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-<<<<<<< HEAD
-        <Button x:Name="btnStartPauze" Content="Start/Pause" HorizontalAlignment="Left" Height="55" Margin="1265,662,0,0" VerticalAlignment="Top" Width="204" Background="#FFD899E2" Click="btnStartPauze_Click">
-=======
         <Button Content="Highscore" HorizontalAlignment="Left" Height="55" Margin="1265,725,0,0" VerticalAlignment="Top" Width="204" Background="#FFD899E2">
->>>>>>> ac307219850fd3cea116830090863849577ea6aa
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-
-        <Label Content="HIER&#xD;&#xA;KOMT &#xD;&#xA;DE &#xD;&#xA;HIGH&#xD;&#xA;SCORE&#xD;&#xA;" HorizontalAlignment="Left" Height="322" Margin="1265,309,0,0" VerticalAlignment="Top" Width="182" Background="#FFCD2D2D" FontSize="48"/>
+        <Label Content="HIER&#xA;KOMT &#xA;DE &#xA;HIGH&#xA;SCORE&#xD;&#xA;1, 2, 3&#xA;" HorizontalAlignment="Left" Height="420" Margin="1265,185,0,0" VerticalAlignment="Top" Width="204" Background="#FFCD2D2D" FontSize="48"/>
         <Label Content="TITEL" HorizontalAlignment="Left" Height="120" Margin="1265,25,0,0" VerticalAlignment="Top" Width="204" Background="#FFCD2D2D" FontSize="48"/>
-        <TextBlock x:Name="TBCountDown" HorizontalAlignment="Right" Margin="0,177,66,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="60" Width="131" FontSize="26" FontFamily="Segoe UI Light"></TextBlock>
-
-
+        <Label Content="SCORE TO BEAT NR 1" HorizontalAlignment="Left" Height="77" Margin="10,860,0,0" VerticalAlignment="Top" Width="1242" FontSize="48" Background="#FFDE2E2E"/>
 
     </Grid>
 </Window>
