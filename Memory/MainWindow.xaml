@@ -18,7 +18,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Content="Highscore" HorizontalAlignment="Left" Height="55" Margin="1265,662,0,0" VerticalAlignment="Top" Width="204" Background="#FFD899E2">
+        <Button x:Name="btnStartPauze" Content="Start/Pause" HorizontalAlignment="Left" Height="55" Margin="1265,662,0,0" VerticalAlignment="Top" Width="204" Background="#FFD899E2" Click="btnStartPauze_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
