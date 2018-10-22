@@ -26,12 +26,14 @@ namespace Memory
         private const int NR_OF_COLS = 4;
         private const int NR_OF_ROWS = 4;
         MemoryGrid grid;
+        //MemoryGrid ResetGrid;
 
 
         public MainWindow()
         {
             InitializeComponent();
             grid = new MemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS);
+            //ResetGrid = new MemoryGrid();
             Timer = new DispatcherTimer();
             Timer.Interval = new TimeSpan(0,0,1);
             Timer.Tick += Timer_Tick;
@@ -59,7 +61,14 @@ namespace Memory
             else
             {
                 Timer.Stop();
-                MessageBox.Show("HOOOOO !");
+                // niet gelukt, andere oplossing (tijdelijk) gevonden 
+                //MemoryGrid t = ResetGrid;
+                MessageBox.Show("Out of time Druk op Ok om opnieuw te starten !");
+                // dit zorgt dat spel afgesloten
+                Application.Current.Shutdown();
+                // dit zorgt om opniew te beginnen
+                System.Windows.Forms.Application.Restart();
+
             }
         }
     } 
