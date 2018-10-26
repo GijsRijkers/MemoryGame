@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
+
 namespace Memory
 {
     public class MemoryGrid
@@ -24,9 +25,6 @@ namespace Memory
         private List<string> matchedImageList = new List<string>();
 
         private bool handsfull = false;
-
-
-      
 
         //Verwijst naar de grid in het xaml file
         public MemoryGrid(Grid grid, int cols, int rows)
@@ -45,10 +43,6 @@ namespace Memory
             AddImages();
         }
 
-        public MemoryGrid()
-        {
-        
-        }
 
         private void InitializeGameGrid()
         {   
