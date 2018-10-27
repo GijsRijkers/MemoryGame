@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Media;
 
 namespace Memory
 {
@@ -27,6 +28,7 @@ namespace Memory
         private const int NR_OF_COLS = 4;
         private const int NR_OF_ROWS = 4;
         MemoryGrid grid;
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.sound);
         //MemoryGrid ResetGrid;
 
 
@@ -39,6 +41,7 @@ namespace Memory
             Timer.Interval = new TimeSpan(0,0,1);
             Timer.Tick += Timer_Tick;
             Timer.Start();
+            player.Play();
 
         }
 
