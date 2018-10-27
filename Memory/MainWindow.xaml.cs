@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Media;
 
 namespace Memory
 {
@@ -28,6 +29,8 @@ namespace Memory
         private const int NR_OF_ROWS = 4;
         MemoryGrid grid;
         //MemoryGrid ResetGrid;
+       // System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.sound);
+
 
 
         public MainWindow()
@@ -39,6 +42,7 @@ namespace Memory
             Timer.Interval = new TimeSpan(0,0,1);
             Timer.Tick += Timer_Tick;
             Timer.Start();
+        //    player.Play();
 
         }
 
@@ -60,6 +64,7 @@ namespace Memory
                 }
                 time--;
                 TBCountDown.Text = String.Format("00:0{0}:{1}", time / 60, time % 60);
+
             }
             else
             {
