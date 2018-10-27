@@ -118,5 +118,10 @@
   <ItemGroup>
     <Resource Include="achterkant kaartjes.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\sound.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
