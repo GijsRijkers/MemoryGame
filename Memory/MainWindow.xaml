@@ -5,27 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Memory"
         mc:Ignorable="d"
-        Title="MainWindow" Background="#FFD69E9E" Height="882" Width="1489" Visibility="Visible">
-    <Grid x:Name="Page" HorizontalAlignment="Left" Height="847" VerticalAlignment="Top" Width="1479" Background="#FFF74BFF">
-        <Grid x:Name="Gamegrid" Margin="0,0,227,-1" Background="White"/>
-        <Button Content="Hoofdmenu" HorizontalAlignment="Left" Height="55" Margin="1265,782,0,0" VerticalAlignment="Top" Width="204" Background="#FFD899E2">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <Button Content="Opslaan" HorizontalAlignment="Left" Height="55" Margin="1265,722,0,0" VerticalAlignment="Top" Width="204" Background="#FFD899E2">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="btnStartPauze" Content="Start/Pause" HorizontalAlignment="Left" Height="55" Margin="1265,662,0,0" VerticalAlignment="Top" Width="204" Background="#FFD899E2" Click="btnStartPauze_Click">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <Label Content="HIER&#xD;&#xA;KOMT &#xD;&#xA;DE &#xD;&#xA;HIGH&#xD;&#xA;SCORE&#xD;&#xA;" HorizontalAlignment="Left" Height="322" Margin="1265,309,0,0" VerticalAlignment="Top" Width="182" Background="#FFCD2D2D" FontSize="48"/>
-        <Label Content="TITEL" HorizontalAlignment="Left" Height="120" Margin="1265,25,0,0" VerticalAlignment="Top" Width="204" Background="#FFCD2D2D" FontSize="48"/>
-        <TextBlock x:Name="TBCountDown" HorizontalAlignment="Right" Margin="0,177,66,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="60" Width="131" FontSize="26" FontFamily="Segoe UI Light"></TextBlock>
+        Title="MainWindow" Height="876.884" Width="1486.954" Visibility="Visible">
+    <Grid x:Name="Page" HorizontalAlignment="Left" Height="847" VerticalAlignment="Top" Width="1479">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1186*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="293*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="1"/>
+                <GradientStop Color="#FFE200FF"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Image HorizontalAlignment="Center" Height="400" VerticalAlignment="Top" Width="700" Source="Resources/Logo.png" Margin="390,0,95.761,0"/>
+        <Button Content="Singleplayer" HorizontalAlignment="Center" VerticalAlignment="Top" Width="400" Margin="566,405,219.761,0" Height="75" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="SingleplayerKlick"/>
+        <Button Content="Afsluiten" HorizontalAlignment="Center" VerticalAlignment="Top" Width="400" Margin="566,732,219.761,0" Height="75" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="CloseApp"/>
+        <Button Content="Mulitplayer" HorizontalAlignment="Center" VerticalAlignment="Top" Width="400" Margin="566,522,219.761,0" Height="75" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="MulyiplayerClick
+                " />
+
+
 
 
     </Grid>
