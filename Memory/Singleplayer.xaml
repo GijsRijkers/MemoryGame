@@ -15,7 +15,7 @@
                 </LinearGradientBrush>
             </Grid.Background>
             <Grid x:Name="Gamegrid" Margin="0,0,227,-1" Background="White"/>
-            <Button Content="Hoofdmenu" HorizontalAlignment="Left" Height="55" Margin="1265,791,0,0" VerticalAlignment="Top" Width="204" Background="Black" Click="TerugKlick" Foreground="White">
+            <Button Content="Hoofdmenu" HorizontalAlignment="Left" Height="55" Margin="1265,782,0,0" VerticalAlignment="Top" Width="204" Background="Black" Click="TerugKlick" Foreground="White">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
@@ -31,7 +31,9 @@
                 </Button.Effect>
             </Button>
             <Label Content="HIER&#xD;&#xA;KOMT &#xD;&#xA;DE &#xD;&#xA;HIGH&#xD;&#xA;SCORE&#xD;&#xA;" HorizontalAlignment="Left" Height="322" Margin="1265,309,0,0" VerticalAlignment="Top" Width="182" Background="{x:Null}" FontSize="48"/>
-            <Label Content="Dieren Memorygame" HorizontalAlignment="Left" Height="120" Margin="1265,25,0,0" VerticalAlignment="Top" Width="204" Background="{x:Null}" FontSize="20"/>
+            <Label HorizontalAlignment="Left" Height="120" Margin="1265,25,0,0" VerticalAlignment="Top" Width="204" Background="{x:Null}" FontSize="20">
+                <Image HorizontalAlignment="Center" Height="90" VerticalAlignment="Top" Width="343" Source="Resources/Logo.png"/>
+            </Label>
             <TextBlock x:Name="TBCountDown" HorizontalAlignment="Right" Margin="0,177,66,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="60" Width="131" FontSize="26" FontFamily="Segoe UI Light"></TextBlock>
 
 
