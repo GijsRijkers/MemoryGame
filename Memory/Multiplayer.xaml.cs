@@ -83,8 +83,8 @@ namespace Memory
             btnStartPauze.Content = btnStartPauze.Content == "Start" ? "Pause" : "Start";
             if (btnStartPauze.Content == "Start")
             {
-                MessageBox.Show("Pause Game");
                 Timer.Stop();
+                MessageBox.Show("Pause Game");                
             }
             else
             {
