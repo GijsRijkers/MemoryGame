@@ -85,6 +85,7 @@ namespace Memory
             {
                 Timer.Stop();
                 
+                
             }
                 
             else
