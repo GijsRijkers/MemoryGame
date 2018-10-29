@@ -50,5 +50,13 @@ namespace Memory
             Multiplayer multiplayerWin = new Multiplayer(this);
             multiplayerWin.Show();
         }
+
+        private void HigscoresClick(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Higscores higscoresWin = new Higscores(this);
+            higscoresWin.Show();
+
+        }
     } 
 }
