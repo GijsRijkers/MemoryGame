@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Memory"
         mc:Ignorable="d"
-        Title="MainWindow" Height="876.884" Width="1486.954" Visibility="Visible">
-    <Grid x:Name="Page" HorizontalAlignment="Left" Height="847" VerticalAlignment="Top" Width="1479">
+        Title="MainWindow" Height="600" Width="1028" Visibility="Visible">
+    <Grid x:Name="Page" Height="600" VerticalAlignment="Top" Margin="0,0,0,-31" HorizontalAlignment="Left" Width="1374">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1186*"/>
+            <ColumnDefinition Width="1060*"/>
+            <ColumnDefinition Width="125*"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="293*"/>
         </Grid.ColumnDefinitions>
@@ -18,11 +19,27 @@
                 <GradientStop Color="#FFE200FF"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image HorizontalAlignment="Center" Height="400" VerticalAlignment="Top" Width="700" Source="Resources/Logo.png" Margin="390,0,95.761,0"/>
-        <Button Content="Singleplayer" HorizontalAlignment="Center" VerticalAlignment="Top" Width="400" Margin="566,405,219.761,0" Height="75" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="ShowNameSelectSP"/>
-        <Button Content="Afsluiten" HorizontalAlignment="Center" Width="400" Margin="566,762,219.6,10" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="CloseApp"/>
-        <Button Content="Mulitplayer" HorizontalAlignment="Center" VerticalAlignment="Top" Width="400" Margin="566,522,219.761,0" Height="75" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="MulyiplayerClick
-                " />
-        <Button Content="Highscores" HorizontalAlignment="Center" VerticalAlignment="Top" Width="400" Margin="566,640,219.6,0" Height="75" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="HigscoresClick" />
+        <Image HorizontalAlignment="Center" Height="228" VerticalAlignment="Top" Width="476" Source="Resources/Logo.png" Margin="300,0,207,0"/>
+        <Button Content="Singleplayer" HorizontalAlignment="Center" VerticalAlignment="Top" Width="240" Margin="394,259,349,0" Height="63" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="ShowNameSelectSP">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="Multiplayer" HorizontalAlignment="Center" VerticalAlignment="Top" Width="240" Margin="394,327,349,0" Height="63" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="MulyiplayerClick
+                " >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="Highscores" HorizontalAlignment="Center" VerticalAlignment="Top" Width="240" Margin="394,395,349,0" Height="63" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="HigscoresClick" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="Afsluiten" HorizontalAlignment="Center" VerticalAlignment="Top" Width="240" Margin="394,463,349,0" Height="63" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="CloseApp" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
     </Grid>
 </Window>

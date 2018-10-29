@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Memory"
         mc:Ignorable="d"
-        Title="SinglePlayerNameSelect" Height="876.884" Width="1486.954">
+        Title="SinglePlayerNameSelect" Height="600" Width="1086.954">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -13,8 +13,8 @@
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image HorizontalAlignment="Center" Height="400" VerticalAlignment="Top" Width="700" Source="Resources/Logo.png" Margin="389.62,0,389.38,0"/>
-        <Label Content="Nicknaam" HorizontalAlignment="Left" Margin="394,404,0,0" VerticalAlignment="Top" Height="47" Width="134" FontSize="20" RenderTransformOrigin="0.863,0.447">
+        <Image HorizontalAlignment="Center" Height="186" VerticalAlignment="Top" Width="576" Source="Resources/Logo.png" Margin="290,0,213,0" RenderTransformOrigin="0.66,0.5"/>
+        <Label Content="Nicknaam" HorizontalAlignment="Left" Margin="380,220,0,0" VerticalAlignment="Top" Height="47" Width="134" FontSize="20" RenderTransformOrigin="0.863,0.447">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -24,9 +24,17 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox HorizontalAlignment="Left" Height="54" Margin="394,450,0,0" TextWrapping="Wrap" Text="{Binding userNameP1}" VerticalAlignment="Top" Width="700" FontSize="35"/>
-        <Button Content="Terug" HorizontalAlignment="Center" VerticalAlignment="Top" Width="138" Margin="390,540,951,0" Height="75" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="BackToMainMenuClick"/>
-        <Button Content="Start" HorizontalAlignment="Center" VerticalAlignment="Top" Width="534" Margin="556,540,389,0" Height="75" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="startSpGame"/>
+        <TextBox HorizontalAlignment="Left" Height="54" Margin="384,256,0,0" TextWrapping="Wrap" Text="{Binding userNameP1}" VerticalAlignment="Top" Width="390" FontSize="35"/>
+        <Button Content="Terug" HorizontalAlignment="Center" VerticalAlignment="Top" Width="108" Margin="381,315,590,0" Height="43" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="BackToMainMenuClick">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="Start" HorizontalAlignment="Center" VerticalAlignment="Top" Width="280" Margin="494,315,305,0" Height="43" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="startSpGame">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
 
     </Grid>
 </Window>
