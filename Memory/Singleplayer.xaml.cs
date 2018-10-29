@@ -32,7 +32,6 @@ namespace Memory
         MemoryGrid grid;
         System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.sound);
         private MainWindow mainWindow;
-        SinglePlayerNameSelect spns;
 
         //MemoryGrid ResetGrid;
         public Singleplayer(MainWindow mainWindow)
@@ -46,7 +45,6 @@ namespace Memory
             Timer.Start();
             player.Play();
             this.mainWindow = mainWindow;
-            spns = new SinglePlayerNameSelect(this);
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -60,10 +58,11 @@ namespace Memory
                     MessageBox.Show("Je hebt gewonnen! \n" + String.Format("00:0{0}:{1}", time / 60, time % 60));
                     Timer.Stop();
 
+                    SinglePlayerNameSelect spns = new SinglePlayerNameSelect(this);
 
                     // Het verbinden van de path die nodig is om de usernames op te slaan in de uNames map.
                     string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
-                    string path = string.Format("{0}Resources\\uNames\\" + spns.getUsername() + ".txt", System.IO.Path.GetFullPath(System.IO.Path.Combine(RunningPath, @"..\..\")));
+                    string path = string.Format("{0}Resources\\uNames\\" + spns.getUserNameP1() + ".txt", System.IO.Path.GetFullPath(System.IO.Path.Combine(RunningPath, @"..\..\")));
 
 
                     // Checken of file bestaat, zo niet, maak dan 1 aan.
@@ -73,7 +72,7 @@ namespace Memory
 
                         using (TextWriter tw = new StreamWriter(path))
                         {
-                            tw.WriteLine(spns.getUsername());
+                            tw.WriteLine(spns.getUserNameP1());
                         }
 
                     }
@@ -82,7 +81,7 @@ namespace Memory
                     {
                         using (TextWriter tw = new StreamWriter(path))
                         {
-                            tw.WriteLine(spns.getUsername());
+                            tw.WriteLine(spns.getUserNameP1());
                         }
                     }
                 }
