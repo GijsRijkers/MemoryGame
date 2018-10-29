@@ -19,13 +19,9 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Image HorizontalAlignment="Center" Height="400" VerticalAlignment="Top" Width="700" Source="Resources/Logo.png" Margin="390,0,95.761,0"/>
-        <Button Content="Singleplayer" HorizontalAlignment="Center" VerticalAlignment="Top" Width="400" Margin="566,405,219.761,0" Height="75" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="SingleplayerKlick"/>
-        <Button Content="Afsluiten" HorizontalAlignment="Center" VerticalAlignment="Top" Width="400" Margin="566,640,219,0" Height="75" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="CloseApp"/>
+        <Button Content="Singleplayer" HorizontalAlignment="Center" VerticalAlignment="Top" Width="400" Margin="566,405,219.761,0" Height="75" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="ShowNameSelectSP"/>
+        <Button Content="Afsluiten" HorizontalAlignment="Center" Width="400" Margin="566,640,219,132" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="CloseApp"/>
         <Button Content="Mulitplayer" HorizontalAlignment="Center" VerticalAlignment="Top" Width="400" Margin="566,522,219.761,0" Height="75" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="MulyiplayerClick
                 " />
-
-
-
-
     </Grid>
 </Window>

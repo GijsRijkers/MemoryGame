@@ -26,6 +26,8 @@ namespace Memory
 
         private bool handsfull = false;
 
+        private bool hasWon = false;
+
         //Verwijst naar de grid in het xaml file
         public MemoryGrid(Grid grid, int cols, int rows)
         {
@@ -96,6 +98,11 @@ namespace Memory
             }
         }
 
+        internal static void handsFull()
+        {
+            throw new NotImplementedException();
+        }
+
         //Hier wordt een list met 2x8 plaatjes gemaakt, deze worden aangeroepen door de berekening van imageNr Vervolgens wordt er 2x een source aan gekoppeld
         private List<Tuple<string, ImageSource>> GetImagesList()
         {
@@ -111,7 +118,7 @@ namespace Memory
             return Shuffle(images);
         }
 
-        //Zorgt voor het meegeven van een nieuwe source en zorgt voor het omdraaien van het vraagteken
+        //Zorgt voor het meegeven van een nieuwe source en zorgt voor het omdraaien van de vraagteken
         private void CardClick(object sender, MouseButtonEventArgs e)
         {
             if (handsfull)
@@ -173,6 +180,17 @@ namespace Memory
                 imageList[n] = value;
             }
             return imageList;
+        }
+
+       
+        public int getImageCount()
+        {
+            return matchedImageList.Count;
+        }
+
+        public void setWin()
+        {
+            hasWon = true;
         }
     }
 }
