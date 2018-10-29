@@ -24,7 +24,7 @@ namespace Memory
         private MainWindow mainWindow;
         private Singleplayer singlePlayer;
 
-        public String userNameP1 { get; set; }
+        public string userNameP1 { get; set; }
 
         public SinglePlayerNameSelect(MainWindow mainWindow)
         { 
@@ -51,32 +51,12 @@ namespace Memory
             this.Close();
             Singleplayer SingleplayerWin = new Singleplayer(mainWindow);
 
-            // Het verbinden van de path die nodig is om de usernames op te slaan in de uNames map.
-            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
-            string path = string.Format("{0}Resources\\uNames\\" + userNameP1 + ".txt", System.IO.Path.GetFullPath(System.IO.Path.Combine(RunningPath, @"..\..\")));
-
-
-            // Checken of file bestaat, zo niet, maak dan 1 aan.
-            if (!File.Exists(path))
-            {
-                File.Create(path).Dispose();
-
-                using (TextWriter tw = new StreamWriter(path))
-                {
-                    tw.WriteLine(userNameP1);
-                }
-
-            }
-            // Als bestand al bestaat, overwrite deze.
-            else if (File.Exists(path))
-            {
-                using (TextWriter tw = new StreamWriter(path))
-                {
-                    tw.WriteLine(userNameP1);
-                }
-            }
-
             SingleplayerWin.Show();
+        }
+
+        public String getUserNameP1()
+        {
+            return userNameP1;
         }
     }
 }
