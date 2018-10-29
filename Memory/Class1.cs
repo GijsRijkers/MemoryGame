@@ -121,6 +121,7 @@ namespace Memory
         //Zorgt voor het meegeven van een nieuwe source en zorgt voor het omdraaien van de vraagteken
         private void CardClick(object sender, MouseButtonEventArgs e)
         {
+            
             if (handsfull)
             {
                 handsfull = false;
@@ -131,7 +132,7 @@ namespace Memory
             Image card = (Image)sender;
             ImageSource front = (ImageSource)card.Tag;
             card.Source = front;
-
+            card.IsEnabled = false;
             // Pak kaart 2
             if (card1 != null && card2 == null)
             {
