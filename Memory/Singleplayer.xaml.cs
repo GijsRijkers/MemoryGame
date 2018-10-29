@@ -149,14 +149,9 @@ namespace Memory
 
         private void ResetTimeKlick(object sender, RoutedEventArgs e)
         {
-            btnResetTime.Content = btnResetTime.Content == "ResetTime";
-            if(btnResetTime.Content == "ResetTime")
-            {
-                TimeSpan timeSpan = new TimeSpan();
-                MessageBox.Show("Game is gereset :)");
-               
-            }
-
+            this.Close();
+            SinglePlayerNameSelect singleplayernameselect = new SinglePlayerNameSelect(this);
+            singleplayernameselect.Show();
             
         }
     }
