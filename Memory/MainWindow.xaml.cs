@@ -23,7 +23,7 @@ namespace Memory
     public partial class MainWindow : Window
     {
         
-        System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.sound);
+        
         //MemoryGrid ResetGrid;
 
         public MainWindow()
@@ -57,6 +57,18 @@ namespace Memory
             Higscores higscoresWin = new Higscores(this);
             higscoresWin.Show();
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
+            player.Stop();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
+            player.Play();
         }
     } 
 }

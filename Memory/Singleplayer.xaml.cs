@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Media;
 using System.IO;
+using System.Configuration;
 
 namespace Memory
 {
@@ -30,7 +31,7 @@ namespace Memory
         private const int NR_OF_COLS = 4;
         private const int NR_OF_ROWS = 4;
         MemoryGrid grid;
-        System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.sound);
+        
         private MainWindow mainWindow;
 
         //MemoryGrid ResetGrid;
@@ -43,7 +44,6 @@ namespace Memory
             Timer.Interval = new TimeSpan(0, 0, 1);
             Timer.Tick += Timer_Tick;
             Timer.Start();
-            player.Play();
             this.mainWindow = mainWindow;
         }
 
@@ -143,6 +143,18 @@ namespace Memory
             this.Close();
             mainWindow.Show();
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
+            player.PlayLooping();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
+            player.Stop();
         }
     }
 }
