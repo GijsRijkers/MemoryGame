@@ -144,5 +144,20 @@ namespace Memory
             mainWindow.Show();
 
         }
+
+      
+
+        private void ResetTimeKlick(object sender, RoutedEventArgs e)
+        {
+            btnResetTime.Content = btnResetTime.Content == "ResetTime";
+            if(btnResetTime.Content == "ResetTime")
+            {
+                TimeSpan timeSpan = new TimeSpan();
+                MessageBox.Show("Game is gereset :)");
+               
+            }
+
+            
+        }
     }
 }
