@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Media;
+using System.IO;
 
 namespace Memory
 {
@@ -31,6 +32,7 @@ namespace Memory
         MemoryGrid grid;
         System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.sound);
         private MainWindow mainWindow;
+        SinglePlayerNameSelect spns;
 
         //MemoryGrid ResetGrid;
         public Singleplayer(MainWindow mainWindow)
@@ -44,16 +46,48 @@ namespace Memory
             Timer.Start();
             player.Play();
             this.mainWindow = mainWindow;
-
+            spns = new SinglePlayerNameSelect(this);
         }
-
-        
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             if (time > 0)
             {
-                if (time <= 10)
+
+                if (grid.getImageCount() == 8)
+                {
+                    grid.setWin();
+                    MessageBox.Show("Je hebt gewonnen! \n" + String.Format("00:0{0}:{1}", time / 60, time % 60));
+                    Timer.Stop();
+
+
+                    // Het verbinden van de path die nodig is om de usernames op te slaan in de uNames map.
+                    string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+                    string path = string.Format("{0}Resources\\uNames\\" + spns.getUsername() + ".txt", System.IO.Path.GetFullPath(System.IO.Path.Combine(RunningPath, @"..\..\")));
+
+
+                    // Checken of file bestaat, zo niet, maak dan 1 aan.
+                    if (!File.Exists(path))
+                    {
+                        File.Create(path).Dispose();
+
+                        using (TextWriter tw = new StreamWriter(path))
+                        {
+                            tw.WriteLine(spns.getUsername());
+                        }
+
+                    }
+                    // Als bestand al bestaat, overwrite deze.
+                    else if (File.Exists(path))
+                    {
+                        using (TextWriter tw = new StreamWriter(path))
+                        {
+                            tw.WriteLine(spns.getUsername());
+                        }
+                    }
+                }
+
+                    if (time <= 10)
                 {
                     if (time % 2 == 0)
                     {
@@ -72,14 +106,13 @@ namespace Memory
                 Timer.Stop();
                 // niet gelukt, andere oplossing (tijdelijk) gevonden 
                 //MemoryGrid t = ResetGrid;
-                MessageBox.Show("Out of time Druk op Ok om opnieuw te starten !");
+                MessageBox.Show("Out of time! Druk op Ok om opnieuw te starten !");
                 // dit zorgt dat de huidige spel afgesloten
                 Application.Current.Shutdown();
                 // dit zorgt om opniew te beginnen
                 System.Windows.Forms.Application.Restart();
                 TimeSpan t = new TimeSpan();
-
-
+                
             }
         }
 
@@ -102,6 +135,7 @@ namespace Memory
 
         private void SingleplayerClose(object sender, EventArgs e)
         {
+            Timer.Stop(); // Timer.Stop toegevoegd aangezien dit nog niet gedaan was.
             mainWindow.Show();
         }
 

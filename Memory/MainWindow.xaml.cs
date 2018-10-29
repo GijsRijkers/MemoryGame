@@ -26,24 +26,22 @@ namespace Memory
         System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.sound);
         //MemoryGrid ResetGrid;
 
-
         public MainWindow()
         {
             InitializeComponent();
-           
-
-        }
-
-        private void SingleplayerKlick(object sender, RoutedEventArgs e)
-        {
-            this.Hide();
-            Singleplayer SingelplayerWin = new Singleplayer(this);
-            SingelplayerWin.Show();
         }
 
         private void CloseApp(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        
+        // Opent nameselect window voor SinglePlayer game.
+        private void ShowNameSelectSP(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            SinglePlayerNameSelect nameSelect = new SinglePlayerNameSelect(this);
+            nameSelect.Show();
         }
 
         private void MulyiplayerClick(object sender, RoutedEventArgs e)
