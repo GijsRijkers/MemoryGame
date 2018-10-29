@@ -105,7 +105,7 @@ namespace Memory
             mainWindow.Show();
 
         }
-
+        //Muziek aan/uit buttons.
         private void geluidaan_Click(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
