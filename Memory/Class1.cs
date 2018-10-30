@@ -176,13 +176,11 @@ namespace Memory
                     handsfull = true;
 
                     score += 10;
-                    MessageBox.Show(Convert.ToString(score));
                 }
                 else
                 {
                     handsfull = true;
                     score -= 1;
-                    MessageBox.Show(Convert.ToString(score));
                 }
             }
             singlePlayer?.showScore();
