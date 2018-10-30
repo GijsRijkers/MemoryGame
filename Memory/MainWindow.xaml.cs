@@ -35,7 +35,7 @@ namespace Memory
 
         private void CloseApp(object sender, RoutedEventArgs e)
         {
-            Close();
+           Close();
         }
         
         // Opent nameselect window voor SinglePlayer game.

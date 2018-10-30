@@ -57,8 +57,6 @@ namespace Memory
                     MessageBox.Show("Je hebt gewonnen! \n" + String.Format("00:0{0}:{1}", time / 60, time % 60));
                     Timer.Stop();
 
-                    MessageBox.Show(uPlayer.getName());
-
                 }
 
                 if (time <= 10)
@@ -110,12 +108,13 @@ namespace Memory
         private void SingleplayerClose(object sender, EventArgs e)
         {
             Timer.Stop(); // Timer.Stop toegevoegd aangezien dit nog niet gedaan was.
+           
             mainWindow.Show();
         }
 
         private void TerugKlick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.Hide();
             mainWindow.Show();
 
         }
@@ -136,10 +135,12 @@ namespace Memory
 
             private void ResetTimeKlick(object sender, RoutedEventArgs e)
             {
-                this.Close();
-                SinglePlayerNameSelect singleplayernameselect = new SinglePlayerNameSelect(this);
-                singleplayernameselect.Show();
-            }
+            this.Close();
+            SinglePlayerNameSelect singleplayernameselect = new SinglePlayerNameSelect(this);
+            singleplayernameselect.Show();
+
+            
+        }
 
             public void showScore()
             {
