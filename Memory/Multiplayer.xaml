@@ -18,6 +18,7 @@
 
             <Grid x:Name="Gamegrid" Margin="0,4,192,10" Background="White" MouseDown="Gamegrid_MouseDown"/>
 
+
             <Button Content="Hoofdmenu" HorizontalAlignment="Left" Height="33" Margin="967,493,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="TerugKlick" Foreground="White">
                 <Button.Effect>
                     <DropShadowEffect/>
@@ -32,6 +33,7 @@
 
             <Image HorizontalAlignment="Center" Height="60" VerticalAlignment="Top" Width="270" Source="Resources/Logo.png" Margin="905,4,-28,0"/>
             <Button Content="Reset" HorizontalAlignment="Left" Height="33" Margin="967,452,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="ResetClick" Foreground="White">
+
 
 
 
@@ -54,7 +56,7 @@
 
 
         </Grid>
-        <Label x:Name="speler1" Content="Speler1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="950,200,-138,0" Height="85" Width="180"/>
-        <Label x:Name="speler2" Content="Speler2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="950,320,-138,0" Height="95" Width="180"/>
+        <Label x:Name="speler1" Content="Speler1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="950,200,-138,0" Height="85" Width="180" Foreground="White"/>
+        <Label x:Name="speler2" Content="Speler2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="950,320,-138,0" Height="95" Width="180" Foreground="White"/>
     </Grid>
 </Window>

@@ -29,8 +29,6 @@ namespace Memory
         private const int NR_OF_ROWS = 4;
         MultiplayerMemoryGrid grid;
 
-
-        System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.sound);
         public MainWindow mainWindow;
         public MultiPlayerNameSelect name;
       
@@ -40,7 +38,6 @@ namespace Memory
             grid = new MultiplayerMemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS);
             //name = new MultiPlayerNameSelect(ReturnPlayer1);
             //ResetGrid = new MemoryGrid(); 
-            player.Play();
             name = nameSelect;
             spelerkleur();
             //ResetGrid = new MemoryGrid();
@@ -70,7 +67,7 @@ namespace Memory
 
         private void TerugKlick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.Hide();
             mainWindow.Show();
 
         }
@@ -109,7 +106,23 @@ namespace Memory
 
             if (grid.getImageCount() == 8)
             {
-                MessageBox.Show("kees");
+                if (grid.score1() < grid.score2())
+                {
+                    MessageBox.Show(name.ReturnPlayer2() + " heeft gewonnen🎈🎉");
+                    this.Hide();
+                    mainWindow.Show();
+                }
+                else if (grid.score1() == grid.score2())
+                {
+                    MessageBox.Show("Het is gelijkspel🎈🎉");
+                }
+
+                else
+                {
+                    MessageBox.Show(name.ReturnPlayer2() + " heeft gewonnen🎈🎉");
+                    this.Hide();
+                    mainWindow.Show();
+                }
             }
         }
 
@@ -122,19 +135,23 @@ namespace Memory
 
         private void ResetClick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.Hide();
             MultiPlayerNameSelect multiPlayerNameSelectWin = new MultiPlayerNameSelect(this);
             multiPlayerNameSelectWin.Show();
 
         }
-        //Muziek aan/uit buttons.
+        /// <summary>
+        /// knop, zet muziek aan.
+        /// </summary>
         private void geluidaan_Click(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
             player.PlayLooping();
 
         }
-
+        /// <summary>
+        /// knop, zet muziek uit.
+        /// </summary>
         private void Geluiduit_Click(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);

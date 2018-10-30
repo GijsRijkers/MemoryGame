@@ -182,7 +182,6 @@ namespace Memory
             Image card = (Image)sender;
             ImageSource front = (ImageSource)card.Tag;
             card.Source = front;
-            card.IsEnabled = false;
             // Pak kaart 2
             if (card1 != null && card2 == null)
             {
