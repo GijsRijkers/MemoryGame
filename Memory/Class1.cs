@@ -127,7 +127,7 @@ namespace Memory
                 ResetGrid();
                 return;
             }
-
+            
             Image card = (Image)sender;
             ImageSource front = (ImageSource)card.Tag;
             card.Source = front;

@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Media;
 
+
+
 namespace Memory
 {
     /// <summary>
@@ -57,6 +59,7 @@ namespace Memory
             Higscores higscoresWin = new Higscores(this);
             higscoresWin.Show();
 
+            //SerializableAttribute;
         }
     } 
 }

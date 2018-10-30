@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Media;
 using System.IO;
+using System.Xml;
+
 
 namespace Memory
 {
@@ -145,4 +147,24 @@ namespace Memory
 
         }
     }
+
+    //class Program
+        //{
+     //   class Memory {
+      //      string playernaam;
+         //   double score;
+            
+           // public Memory (string player, double score);
+
 }
+
+        
+
+        
+
+//}
+
+
+
+
+//}

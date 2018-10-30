@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml;
 
 namespace Memory
 {
@@ -59,4 +60,21 @@ namespace Memory
             return userNameP1;
         }
     }
+
+    //class XML
+      //  {
+        //static void Main (string[] args)
+          //  {
+            //XmlWriter xmlWriter = XmlWriter.Create("TEST.xml");
+
+            //xmlWriter.WriteStartDocument();
+            //xmlWriter.WriteStartElement("userNameP1");
+
+            //xmlWriter.WriteEndElement();
+
+            //xmlWriter.WriteEndDocument();
+            //xmlWriter.Close();
+
+      //  }
+   // }
 }
