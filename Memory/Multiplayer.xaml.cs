@@ -36,17 +36,30 @@ namespace Memory
         
         //private MultiplayerMemoryGrid multiplayerMemoryGrid;
 
+        MemoryGrid grid;
+        private MainWindow mainWindow;
+
         //private MulitplayerPlayers player1;
 
         public Multiplayer(MainWindow mainWindow, MultiPlayerNameSelect nameSelect)
         {
             InitializeComponent();
+
             grid = new MultiplayerMemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS);
             //name = new MultiPlayerNameSelect(ReturnPlayer1);
             //ResetGrid = new MemoryGrid(); 
             player.Play();
             name = nameSelect;
             spelerkleur();
+
+            grid = new MemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS);
+            //ResetGrid = new MemoryGrid();
+            Timer = new DispatcherTimer();
+            Timer.Interval = new TimeSpan(0, 0, 1);
+            Timer.Tick += Timer_Tick;
+            Timer.Start();
+            
+
             this.mainWindow = mainWindow;
 
             
@@ -107,11 +120,28 @@ namespace Memory
 
         private void CheckWin()
         {
+
             if (grid.getImageCount() == 8)
             {
                 MessageBox.Show("kees");
-            }
 
+            btnStartPauze.Content = btnStartPauze.Content == "Start" ? "Pause" : "Start";
+            if (btnStartPauze.Content == "Start")
+            {
+                Timer.Stop();
+                
+                
+            }
+                
+            else
+            {
+                
+                Timer.Start();
+
+
+            }
+            
+            
         }
 
         private void Gamegrid_MouseDown(object sender, MouseButtonEventArgs e)
@@ -127,6 +157,19 @@ namespace Memory
             MultiPlayerNameSelect multiPlayerNameSelectWin = new MultiPlayerNameSelect(this);
             multiPlayerNameSelectWin.Show();
 
+        }
+        //Muziek aan/uit buttons.
+        private void geluidaan_Click(object sender, RoutedEventArgs e)
+        {
+            SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
+            player.PlayLooping();
+
+        }
+
+        private void Geluiduit_Click(object sender, RoutedEventArgs e)
+        {
+            SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
+            player.Stop();
         }
     }
 }

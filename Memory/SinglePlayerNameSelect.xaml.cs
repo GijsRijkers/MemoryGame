@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml;
 
 namespace Memory
 {
@@ -23,6 +24,8 @@ namespace Memory
 
         private MainWindow mainWindow;
         private Singleplayer singlePlayer;
+        private double uHighScore;
+        private Player tempPlayerOne;
 
         public string userNameP1 { get; set; }
 
@@ -50,13 +53,29 @@ namespace Memory
         {
             this.Close();
             Singleplayer SingleplayerWin = new Singleplayer(mainWindow);
+            userNameP1 = userNameP1.ToString();
+            uHighScore = 0;
 
+            tempPlayerOne = new Player(userNameP1, uHighScore);
+            SingleplayerWin.setPlayer(tempPlayerOne);
             SingleplayerWin.Show();
         }
-
-        public String getUserNameP1()
-        {
-            return userNameP1;
-        }
     }
+
+    //class XML
+      //  {
+        //static void Main (string[] args)
+          //  {
+            //XmlWriter xmlWriter = XmlWriter.Create("TEST.xml");
+
+            //xmlWriter.WriteStartDocument();
+            //xmlWriter.WriteStartElement("userNameP1");
+
+            //xmlWriter.WriteEndElement();
+
+            //xmlWriter.WriteEndDocument();
+            //xmlWriter.Close();
+
+      //  }
+   // }
 }
