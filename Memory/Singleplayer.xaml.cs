@@ -1,22 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
-using System.Media;
-using System.IO;
 
 namespace Memory
+
 {
     /// <summary>
     /// Interaction logic for Singleplayer.xaml
@@ -31,13 +19,14 @@ namespace Memory
         private const int NR_OF_ROWS = 4;
         MemoryGrid grid;
         System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.sound);
-        private MainWindow mainWindow;
+        public MainWindow mainWindow;
+        private Player uPlayer;
 
         //MemoryGrid ResetGrid;
         public Singleplayer(MainWindow mainWindow)
         {
             InitializeComponent();
-            grid = new MemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS);
+            grid = new MemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS, this);
             //ResetGrid = new MemoryGrid();
             Timer = new DispatcherTimer();
             Timer.Interval = new TimeSpan(0, 0, 1);
@@ -45,45 +34,24 @@ namespace Memory
             Timer.Start();
             player.Play();
             this.mainWindow = mainWindow;
+            DataContext = this;
+            scoreLabel.Content =  "Score: " + grid.getScore().ToString();
         }
+
+        public void setPlayer(Player player) { uPlayer = player; }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             if (time > 0)
             {
-
                 if (grid.getImageCount() == 8)
                 {
                     grid.setWin();
                     MessageBox.Show("Je hebt gewonnen! \n" + String.Format("00:0{0}:{1}", time / 60, time % 60));
                     Timer.Stop();
 
-                    SinglePlayerNameSelect spns = new SinglePlayerNameSelect(this);
+                    MessageBox.Show(uPlayer.getName());
 
-                    // Het verbinden van de path die nodig is om de usernames op te slaan in de uNames map.
-                    string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
-                    string path = string.Format("{0}Resources\\uNames\\" + spns.getUserNameP1() + ".txt", System.IO.Path.GetFullPath(System.IO.Path.Combine(RunningPath, @"..\..\")));
-
-
-                    // Checken of file bestaat, zo niet, maak dan 1 aan.
-                    if (!File.Exists(path))
-                    {
-                        File.Create(path).Dispose();
-
-                        using (TextWriter tw = new StreamWriter(path))
-                        {
-                            tw.WriteLine(spns.getUserNameP1());
-                        }
-
-                    }
-                    // Als bestand al bestaat, overwrite deze.
-                    else if (File.Exists(path))
-                    {
-                        using (TextWriter tw = new StreamWriter(path))
-                        {
-                            tw.WriteLine(spns.getUserNameP1());
-                        }
-                    }
                 }
 
                     if (time <= 10)
@@ -143,6 +111,11 @@ namespace Memory
             this.Close();
             mainWindow.Show();
 
+        }
+
+        public void showScore()
+        {
+           scoreLabel.Content = "Score: " + grid.getScore();
         }
     }
 }
