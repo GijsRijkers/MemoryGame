@@ -12,6 +12,9 @@ using System.Windows.Media.Imaging;
 
 namespace Memory
 {
+    /// <summary>
+    /// Hier is de class die zorgt voor het aanmaken van de columns en rows zodat er een image geprint kan worden op de gecreëerde locaties.
+    /// </summary>
     public class MemoryGrid
     {
         private int cols;
@@ -30,7 +33,14 @@ namespace Memory
         private Singleplayer singlePlayer = null;
         private int score;
 
-        //Verwijst naar de grid in het xaml file
+        /// <summary>
+        /// Verwijst naar de parameters hieronder in de grid voor singlePlayer
+        /// </summary>
+        /// <param name="grid">Is het speelveld</param>
+        /// <param name="cols">Zijn de verticale rijen</param>
+        /// <param name="rows">Zijn de horizontale rijen</param>
+        /// <param name="singlePlayer">Verwijst naar het singleplayerscherm</param>
+        
         public MemoryGrid(Grid grid, int cols, int rows, Singleplayer singlePlayer)
         {
             this.cols = cols;
@@ -49,7 +59,12 @@ namespace Memory
             //Plaatsen van de images op de aangegeven locatie
             AddImages();
         }
-
+        /// <summary>
+        /// Verwijst naar de parameters hieronder in de grid
+        /// </summary>
+        /// <param name="grid">Is het speelveld</param>
+        /// <param name="cols">Zijn de verticale rijen</param>
+        /// <param name="rows">Zijn de horizontale rijen</param>
         public MemoryGrid(Grid grid, int cols, int rows)
         {
             this.cols = cols;
@@ -68,7 +83,9 @@ namespace Memory
             AddImages();
         }
 
-
+        /// <summary>
+        /// Zorgt voor het herkennen van de row en column
+        /// </summary>
         private void InitializeGameGrid()
         {   
             //Zorgt ervoor dat het systeem de row herkent
@@ -83,8 +100,10 @@ namespace Memory
             }
 
         }
-
-        //Op iedere rij wordt plaats gemaakt voor een image met achtergrondplaatje
+        
+        /// <summary>
+        /// Hier wordt de grid gemaakt, 4x per horizontale rij worden er ook 4 verticale rijen gemaakt. Dit zorgt voor de grid
+        /// </summary>
         private void AddImages()
         {
             List<Tuple<string, ImageSource>> images = imageSources;
@@ -125,8 +144,12 @@ namespace Memory
         {
             throw new NotImplementedException();
         }
-
-        //Hier wordt een list met 2x8 plaatjes gemaakt, deze worden aangeroepen door de berekening van imageNr Vervolgens wordt er 2x een source aan gekoppeld
+        /// <summary>
+        /// Tuple is als een dictionary alleen is het in runtime niet mogelijk deze waardes aan te passen. In deze tuple
+        /// wordt er 8x een source van de plaatjes gekozen 
+        /// </summary>
+        /// <returns>Returned de kaarten die door de randomizer geweest zijn</returns>
+        
         private List<Tuple<string, ImageSource>> GetImagesList()
         {
             List<Tuple<string, ImageSource>> images = new List<Tuple<string, ImageSource>>();
@@ -141,7 +164,11 @@ namespace Memory
             return Shuffle(images);
         }
 
-        //Zorgt voor het meegeven van een nieuwe source en zorgt voor het omdraaien van de vraagteken
+        /// <summary>
+        /// Zorgt voor het meegeven van een nieuwe source en zorgt voor het omdraaien van de vraagteken
+        /// </summary>
+        /// <param name="sender">Sender is in dit geval de klik en is gekoppeld aan de PNG van de achterkant kaartjes</param>
+
         private void CardClick(object sender, MouseButtonEventArgs e)
         {
             
@@ -185,6 +212,9 @@ namespace Memory
             singlePlayer?.showScore();
         }
 
+        /// <summary>
+        /// Zorgt voor het resetten van de grid zodat alle kaarten weer terug komen
+        /// </summary>
         public void ResetGrid()
         {
             card1 = null;
@@ -192,8 +222,12 @@ namespace Memory
             this.grid.Children.Clear();
             AddImages();
         }
-        
-        //De functie zorgt voor het randomizen van de eerder aangemaakte list met daarin de source, tag en klik-functie
+
+        /// <summary>
+        /// De functie zorgt voor het randomizen van de eerder aangemaakte list met daarin de source, tag en klik-functie
+        /// </summary>
+        /// <param name="imageList"></param>
+        /// <returns>Returned een geshuffelde imageList</returns>
         private List<Tuple<string, ImageSource>> Shuffle(List<Tuple<string,ImageSource>> imageList)
         {
             Random randomizer = new Random();
@@ -209,17 +243,26 @@ namespace Memory
             return imageList;
         }
 
-       
+        /// <summary>
+        /// Telt het aantal gematchte kaarten in de nieuwe matchedImageList
+        /// </summary>
+        /// <returns>Het aantal dat geteld is</returns>
         public int getImageCount()
         {
             return matchedImageList.Count;
         }
 
+        /// <summary>
+        /// Zet de haswon bool op true
+        /// </summary>
         public void setWin()
         {
             hasWon = true;
         }
 
+        /// <summary>
+        /// returned de score
+        /// </summary>
         public int getScore()
         {
             return score;
