@@ -34,8 +34,6 @@ namespace Memory
         private const int NR_OF_ROWS = 4;
         MultiplayerMemoryGrid grid;
 
-
-        System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.sound);
         public MainWindow mainWindow;
         public MultiPlayerNameSelect name;
       
@@ -47,6 +45,7 @@ namespace Memory
         {
             InitializeComponent();
             grid = new MultiplayerMemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS);
+
             player.Play();
             name = nameSelect;
             spelerkleur();
@@ -81,7 +80,7 @@ namespace Memory
         /// </summary>
         private void TerugKlick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.Hide();
             mainWindow.Show();
 
         }
@@ -133,7 +132,6 @@ namespace Memory
                 {
                     MessageBox.Show("Het is gelijkspel");
                 }
-
                 else
                 {
                     MessageBox.Show(name.ReturnPlayer2() + "heeft gewonnen");
@@ -156,7 +154,7 @@ namespace Memory
         /// </summary>
         private void ResetClick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.Hide();
             MultiPlayerNameSelect multiPlayerNameSelectWin = new MultiPlayerNameSelect(this);
             multiPlayerNameSelectWin.Show();
 

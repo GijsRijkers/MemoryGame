@@ -52,6 +52,7 @@ namespace Memory
         {
             this.Close();
             mainWindow.Show();
+           
         }
   
         // Start SinglePlayer Game. 

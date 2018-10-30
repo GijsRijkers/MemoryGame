@@ -101,6 +101,9 @@ namespace Memory
           
         }
 
+        private void Player1_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
+        }
     }
 }
