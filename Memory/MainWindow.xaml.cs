@@ -29,18 +29,30 @@ namespace Memory
 
         //MemoryGrid ResetGrid;
 
+        /// <summary>
+        /// Constructor van de MainWindow class (deze). 
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
             getWorkSheet();
         }
 
+        /// <summary>
+        /// Knop, Sluit de applicatie
+        /// </summary>
+        /// <param name="sender">Sender, de gebruiker</param>
+        /// <param name="e">Name of Args (actionlistener)</param>
         private void CloseApp(object sender, RoutedEventArgs e)
         {
            Close();
         }
-        
-        // Opent nameselect window voor SinglePlayer game.
+
+        /// <summary>
+        /// Opent nameselect window voor SinglePlayer game.
+        /// </summary>
+        /// <param name="sender">Sender, de gebruiker</param>
+        /// <param name="e">Name of Args (actionlistener)</param>
         private void ShowNameSelectSP(object sender, RoutedEventArgs e)
         {
             this.Hide();
@@ -48,6 +60,11 @@ namespace Memory
             nameSelect.Show();
         }
 
+        /// <summary>
+        /// Knop, stuurt de speler naar de MultiPlayerNameSelect window.
+        /// </summary>
+        /// <param name="sender">Sender, de gebruiker</param>
+        /// <param name="e">Name of Args (actionlistener)</param>
         private void MultiplayerClick(object sender, RoutedEventArgs e)
         {
             this.Hide();
@@ -55,6 +72,11 @@ namespace Memory
             multiPlayerNameSelectWin.Show();
         }
 
+        /// <summary>
+        /// Knop, stuurt de speler naar de highscore window.
+        /// </summary>
+        /// <param name="sender">Sender, de gebruiker</param>
+        /// <param name="e">Name of EventArgs (actionlistener)</param>
         private void HigscoresClick(object sender, RoutedEventArgs e)
         {
             this.Hide();
