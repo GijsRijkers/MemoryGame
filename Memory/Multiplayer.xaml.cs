@@ -28,7 +28,6 @@ namespace Memory
         private const int NR_OF_COLS = 4;
         private const int NR_OF_ROWS = 4;
         MemoryGrid grid;
-        System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.sound);
         private MainWindow mainWindow;
 
         public Multiplayer(MainWindow mainWindow)
@@ -40,7 +39,7 @@ namespace Memory
             Timer.Interval = new TimeSpan(0, 0, 1);
             Timer.Tick += Timer_Tick;
             Timer.Start();
-            player.Play();
+            
             this.mainWindow = mainWindow;
         }
 
@@ -84,15 +83,18 @@ namespace Memory
             if (btnStartPauze.Content == "Start")
             {
                 Timer.Stop();
-                MessageBox.Show("Pause Game");                
+                
+                
             }
+                
             else
             {
-                MessageBox.Show("Start Game");
+                
                 Timer.Start();
 
             }
-
+            
+            
         }
 
         private void SingleplayerClose(object sender, EventArgs e)
@@ -105,6 +107,19 @@ namespace Memory
             this.Close();
             mainWindow.Show();
 
+        }
+        //Muziek aan/uit buttons.
+        private void geluidaan_Click(object sender, RoutedEventArgs e)
+        {
+            SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
+            player.PlayLooping();
+
+        }
+
+        private void Geluiduit_Click(object sender, RoutedEventArgs e)
+        {
+            SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
+            player.Stop();
         }
     }
 }

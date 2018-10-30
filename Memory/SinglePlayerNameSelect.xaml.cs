@@ -24,6 +24,8 @@ namespace Memory
 
         private MainWindow mainWindow;
         private Singleplayer singlePlayer;
+        private double uHighScore;
+        private Player tempPlayerOne;
 
         public string userNameP1 { get; set; }
 
@@ -51,13 +53,12 @@ namespace Memory
         {
             this.Close();
             Singleplayer SingleplayerWin = new Singleplayer(mainWindow);
+            userNameP1 = userNameP1.ToString();
+            uHighScore = 0;
 
+            tempPlayerOne = new Player(userNameP1, uHighScore);
+            SingleplayerWin.setPlayer(tempPlayerOne);
             SingleplayerWin.Show();
-        }
-
-        public String getUserNameP1()
-        {
-            return userNameP1;
         }
     }
 

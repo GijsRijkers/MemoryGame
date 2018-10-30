@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Memory"
         mc:Ignorable="d"
-        Title="Multiplayer" Background="#FFD69E9E" Height="615.333" Width="1142.667" Visibility="Visible" Closed="SingleplayerClose">
+        Title="Multiplayer" Background="#FFD69E9E" Height="603.476" Width="1142.667" Visibility="Visible" Closed="SingleplayerClose">
     <Grid Margin="0,0,144,72">
-        <Grid x:Name="Page" Height="672" VerticalAlignment="Top" Margin="-13,0,-143,-161">
+        <Grid x:Name="Page" Height="587" VerticalAlignment="Top" Margin="-13,0,-143,-73.4">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFFD04FF" Offset="1"/>
                     <GradientStop Color="White"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <Grid x:Name="Gamegrid" Margin="0,4,192,85" Background="White"/>
+            <Grid x:Name="Gamegrid" Margin="0,4,192,10" Background="White"/>
             <Button Content="Hoofdmenu" HorizontalAlignment="Left" Height="33" Margin="967,493,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="TerugKlick" Foreground="White">
                 <Button.Effect>
                     <DropShadowEffect/>
@@ -25,7 +25,7 @@
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Label Content="HIER&#xD;&#xA;KOMT &#xD;&#xA;DE &#xD;&#xA;HIGH&#xD;&#xA;SCORE&#xD;&#xA;" HorizontalAlignment="Left" Height="250" Margin="967,166,0,0" VerticalAlignment="Top" Width="135" Background="{x:Null}" FontSize="48" RenderTransformOrigin="0.456,0.522"/>
+            <Label Content="HIER&#xD;&#xA;KOMT &#xD;&#xA;DE &#xD;&#xA;HIGH&#xD;&#xA;SCORE&#xD;&#xA;" HorizontalAlignment="Left" Height="250" Margin="981,127,0,0" VerticalAlignment="Top" Width="135" Background="{x:Null}" FontSize="48" RenderTransformOrigin="0.456,0.522"/>
             <TextBlock x:Name="TBCountDown" HorizontalAlignment="Right" Margin="0,87,45,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="60" Width="122" FontSize="26" FontFamily="Segoe UI Light"></TextBlock>
             <Button Content="Opslaan" HorizontalAlignment="Left" Height="33" Margin="967,531,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="TerugKlick" Foreground="White">
                 <Button.Effect>
@@ -33,6 +33,16 @@
                 </Button.Effect>
             </Button>
             <Image HorizontalAlignment="Center" Height="60" VerticalAlignment="Top" Width="270" Source="Resources/Logo.png" Margin="905,4,-28,0"/>
+            <Button x:Name="geluidaan" Content="Geluid aan" HorizontalAlignment="Right" Margin="0,0,94,135" VerticalAlignment="Bottom" Width="79" d:LayoutOverrides="TopMargin, BottomMargin" Background="Black" Foreground="White" Height="31" Click="geluidaan_Click">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="Geluiduit" Content="Geluid uit" HorizontalAlignment="Right" Margin="0,0,14,135" VerticalAlignment="Bottom" Width="75" Background="Black" Foreground="White" Height="31" Click="Geluiduit_Click" d:LayoutOverrides="TopMargin, BottomMargin">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
 
 
         </Grid>
