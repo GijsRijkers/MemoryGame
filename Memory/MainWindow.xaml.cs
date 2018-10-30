@@ -37,7 +37,7 @@ namespace Memory
 
         private void CloseApp(object sender, RoutedEventArgs e)
         {
-            Close();
+           Close();
         }
         
         // Opent nameselect window voor SinglePlayer game.
@@ -62,7 +62,9 @@ namespace Memory
             //higscoresWin.Show();
 
         }
-        //Muziek aan/uit buttons.
+        /// <summary>
+        /// knop, zet muziek aan.
+        /// </summary>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
@@ -71,7 +73,9 @@ namespace Memory
 
 
             //SerializableAttribute;
-
+            /// <summary>
+            /// knop, zet muziek uit.
+            /// </summary>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);

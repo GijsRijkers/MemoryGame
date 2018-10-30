@@ -11,19 +11,16 @@ using System.Xml;
 
 using System.Configuration;
 
-
 namespace Memory
-
 {
     /// <summary>
-    /// Interaction logic for Singleplayer.xaml
+    /// Interaction logic for SingleplayerEasy.xaml
     /// Objecten van andere classes worden meegegeven zodat deze gebruikt kunnen worden binnen deze class.
     /// </summary>
-    public partial class Singleplayer : Window
+    public partial class SingleplayerEasy : Window
     {
-        private int time = 59;
+        private int time = 299;
 
-    
         private DispatcherTimer Timer;
         private const int NR_OF_COLS = 4;
         private const int NR_OF_ROWS = 4;
@@ -32,13 +29,13 @@ namespace Memory
         private Player uPlayer;
 
         /// <summary>
-        /// Dit is de constructor van de Singleplayer class. In de constructor wordt alles wat voorbereid moet worden, voorbereid. 
+        /// Dit is de constructor van de Singleplayer class. In de constructor wordt alles wat voorbereid moet worden, voorbereid.
         /// </summary>
         /// <param name="mainWindow">MainWindow, de naam van het object: MainWindow.</param>
-        public Singleplayer(MainWindow mainWindow)
+        public SingleplayerEasy(MainWindow mainWindow)
         {
             InitializeComponent();
-            grid = new MemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS, this);
+            grid = new MemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS);
             //ResetGrid = new MemoryGrid();
             Timer = new DispatcherTimer();
             Timer.Interval = new TimeSpan(0, 0, 1);
@@ -47,35 +44,34 @@ namespace Memory
             this.mainWindow = mainWindow;
             DataContext = this;
             scoreLabel.Content = "Score: " + grid.getScore().ToString();
+
+
         }
 
         /// <summary>
-        /// Deze functie zet de naam van de speler. Zodat de naam in elke class gebruikt kan worden.
+        /// Dit is de constructor van de Singleplayer class. In de constructor wordt alles wat voorbereid moet worden, voorbereid.
         /// </summary>
-        /// <param name="player">Naam van het object Player</param>
+        /// <param name="mainWindow">MainWindow, de naam van het object: MainWindow.</param>
         public void setPlayer(Player player) { uPlayer = player; }
 
         /// <summary>
-        ///  Deze functie bevat alle functionaliteit van de timer die gebruikt wordt tijdens het spelen van de game.
+        /// Dit is de constructor van de Singleplayer class. In de constructor wordt alles wat voorbereid moet worden, voorbereid.
         /// </summary>
-        /// <param name="sender">Sender, de gebruiker</param>
-        /// <param name="e">Name of EventArgs (actionlistener)</param>
+        /// <param name="mainWindow">MainWindow, de naam van het object: MainWindow.</param>
         private void Timer_Tick(object sender, EventArgs e)
         {
             if (time > 0)
             {
-                // Controleert of de gebruiker daadwerkelijk heeft gewonnen. Wanneer de getImageCount 8 is, dan heeft de speler alle kaarten omgedraaid.
                 if (grid.getImageCount() == 8)
                 {
                     grid.setWin();
                     MessageBox.Show("Je hebt gewonnen! \n" + String.Format("00:0{0}:{1}", time / 60, time % 60));
                     Timer.Stop();
 
-                    // De highscore van de speler wordt gekoppeld aan de speler. 
-                    uPlayer.setHighScore(grid.getScore());
+                    MessageBox.Show(uPlayer.getName());
+
                 }
 
-                // Als de tijd kleiner is dan 10 seconden....
                 if (time <= 10)
                 {
                     if (time % 2 == 0)
@@ -106,7 +102,7 @@ namespace Memory
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sender">Sender, de gebruiker</param>
         /// <param name="e">Name of EventArgs (actionlistener)</param>
@@ -127,6 +123,7 @@ namespace Memory
 
         }
 
+
         /// <summary>
         /// Knop, Sluit de Singleplayer (difficult) game af. De timer stopt en de gebruiker wordt doorverwezen naar het main-menu
         /// </summary>
@@ -135,18 +132,18 @@ namespace Memory
         private void SingleplayerClose(object sender, EventArgs e)
         {
             Timer.Stop(); // Timer.Stop toegevoegd aangezien dit nog niet gedaan was.
-           
             mainWindow.Show();
         }
 
+
         /// <summary>
-        /// Knop, Gaat terug naar het main-menu. 
+        /// Knop, Gaat terug naar het main-menu.
         /// </summary>
         /// <param name="sender">Sender, de gebruiker</param>
         /// <param name="e">Name of EventArgs</param>
         private void TerugKlick(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+            this.Close();
             mainWindow.Show();
 
         }
@@ -161,6 +158,7 @@ namespace Memory
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
             player.PlayLooping();
         }
+
 
         /// <summary>
         /// Knop, stopt muziek dat aan het afspelen is.
@@ -185,21 +183,14 @@ namespace Memory
             singleplayernameselect.Show();
         }
 
-private void ResetTimeKlick(object sender, RoutedEventArgs e)
-            {
-            this.Close();
-            SinglePlayerNameSelect singleplayernameselect = new SinglePlayerNameSelect(this);
-            singleplayernameselect.Show();
-        }
-
         /// <summary>
-        /// Laat de score zien die de speler heeft behaald. Dit kan tijdens de game aangeroepen worden, of na de game. 
+        /// Laat de score zien die de speler heeft behaald. Dit kan tijdens de game aangeroepen worden, of na de game.
         /// </summary>
         public void showScore()
         {
-          scoreLabel.Content = "Score: " + grid.getScore();
+            scoreLabel.Content = "Score: " + grid.getScore();
         }
-
-        }
-      }
     }
+
+}
+

@@ -28,6 +28,7 @@ namespace Memory
         private Singleplayer singlePlayer;
         private double uHighScore;
         private Player tempPlayerOne;
+        private SingleplayerEasy singleplayerEasy;
 
         /// <summary>
         /// UsernameP1 is de naam die ingevuld wordt in de textBox met de binding: UserNameP1.
@@ -54,6 +55,11 @@ namespace Memory
             InitializeComponent();
             this.singlePlayer = singlePlayer;
         }
+        
+        public SinglePlayerNameSelect(SingleplayerEasy singleplayerEasy)
+        {
+            this.singleplayerEasy = singleplayerEasy;
+        }
 
         /// <summary>
         /// Knop, stuurt speler terug naar main-menu wanneer deze getriggered wordt. 
@@ -64,6 +70,7 @@ namespace Memory
         {
             this.Close();
             mainWindow.Show();
+           
         }
   
         /// <summary>
@@ -77,8 +84,26 @@ namespace Memory
             
             //Creeer een nieuw object SinglePlayerWin(dow).
             Singleplayer SingleplayerWin = new Singleplayer(mainWindow);
+             userNameP1 = userNameP1.ToString();
+            uHighScore = 0;
+
             userNameP1 = userNameP1.ToString();
             uHighScore = 0;
+        }
+
+        /// <summary>
+        /// Start het makkelijke spel van singleplayer
+        /// </summary>
+        private void startSpGameEasy(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            SingleplayerEasy SingleplayerEasyWin = new SingleplayerEasy(mainWindow);
+            userNameP1 = userNameP1.ToString();
+            uHighScore = 0;
+
+            userNameP1 = userNameP1.ToString();
+            uHighScore = 0;
+
 
             /*
              * Creeert een nieuw object van Player.

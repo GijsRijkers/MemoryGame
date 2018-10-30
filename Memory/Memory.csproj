@@ -81,6 +81,9 @@
     <Compile Include="Singleplayer.xaml.cs">
       <DependentUpon>Singleplayer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SingleplayerEasy.xaml.cs">
+      <DependentUpon>SingleplayerEasy.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SinglePlayerNameSelect.xaml.cs">
       <DependentUpon>SinglePlayerNameSelect.xaml</DependentUpon>
     </Compile>
@@ -106,6 +109,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Singleplayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SingleplayerEasy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

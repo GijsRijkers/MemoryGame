@@ -34,12 +34,17 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Button Content="Terug" HorizontalAlignment="Center" VerticalAlignment="Top" Width="108" Margin="381,315,590,0" Height="43" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="BackToMainMenuClick">
+        <Button Content="Terug" HorizontalAlignment="Center" VerticalAlignment="Top" Width="108" Margin="385,315,587.8,0" Height="43" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="BackToMainMenuClick">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Content="Start" HorizontalAlignment="Center" VerticalAlignment="Top" Width="280" Margin="494,315,305,0" Height="43" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="startSpGame">
+        <Button Content="Start makkelijk" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="505,315,445.8,0" Height="43" Background="Black" Foreground="White" FontWeight="Bold" FontSize="16" Click="startSpGameEasy">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="Start moeilijk" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="645,315,305.8,0" Height="43" Background="Black" Foreground="White" FontWeight="Bold" FontSize="16" Click="startSpGame">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

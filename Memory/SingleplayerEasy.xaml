@@ -1,0 +1,57 @@
+﻿<Window x:Class="Memory.SingleplayerEasy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Memory"
+        mc:Ignorable="d"
+        Title="SingleplayerEasy" Background="#FFD69E9E" Height="615.333" Width="1142.667" Visibility="Visible" Closed="SingleplayerClose" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,144,72">
+        <Grid x:Name="Page" Height="672" VerticalAlignment="Top" Margin="-13,0,-143,-161">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFD04FF" Offset="1"/>
+                    <GradientStop Color="White"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid x:Name="Gamegrid" Margin="0,4,192,92" Background="White"/>
+            <Button Content="Hoofdmenu" HorizontalAlignment="Left" Height="33" Margin="967,490,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="TerugKlick" Foreground="White">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="btnStartPauze" Content="Start/Pause" HorizontalAlignment="Left" Height="31" Margin="967,350,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="btnStartPauze_Click" Foreground="White">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Label Content="HIER&#xD;&#xA;KOMT &#xD;&#xA;DE &#xD;&#xA;HIGH&#xD;&#xA;SCORE&#xD;&#xA;" HorizontalAlignment="Left" Height="198" Margin="981,147,0,0" VerticalAlignment="Top" Width="135" Background="{x:Null}" FontSize="48" RenderTransformOrigin="0.456,0.522"/>
+            <TextBlock x:Name="TBCountDown" HorizontalAlignment="Right" Margin="0,87,45,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="60" Width="122" FontSize="26" FontFamily="Segoe UI Light"></TextBlock>
+            <Button Content="Opslaan" HorizontalAlignment="Left" Height="33" Margin="967,537,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="TerugKlick" Foreground="White">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Image HorizontalAlignment="Center" Height="60" VerticalAlignment="Top" Width="270" Source="Resources/Logo.png" Margin="905,4,-28,0"/>
+            <Button Content="Geluid  aan" HorizontalAlignment="Right" Margin="0,0,92,246" VerticalAlignment="Bottom" Width="77" Click="Button_Click" Background="Black" Foreground="White" Height="31" RenderTransformOrigin="-3.074,1.991">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button Content="Geluid uit" HorizontalAlignment="Right" Margin="0,0,10,246" VerticalAlignment="Bottom" Width="77" Background="Black" Foreground="White" Height="30" Click="Button_Click_1">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+
+            <Button x:Name="btnResetTime" Content="ResetTime" HorizontalAlignment="Left" Height="33" Margin="967,440,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="ResetTimeKlick" Foreground="White">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+
+            <Label Content="Score: " Name="scoreLabel" HorizontalAlignment="Left" Margin="967,135,0,0" VerticalAlignment="Top"/>
+
+        </Grid>
+    </Grid>
+</Window>

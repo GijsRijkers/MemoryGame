@@ -36,7 +36,9 @@ namespace Memory
         private bool hasWon = false;
 
 
-
+        /// <summary>
+        /// //Verwijst naar de grid in het xaml file, maakt de grid en voegt de plaatjes toe
+        /// </summary>
         //Verwijst naar de grid in het xaml file
 
         public MultiplayerMemoryGrid(Grid grid, int cols, int rows)
@@ -71,7 +73,9 @@ namespace Memory
 
         }
 
-        //Op iedere rij wordt plaats gemaakt voor een image met achtergrondplaatje
+        /// <summary>
+        /// Voegt de plaatjes toe
+        /// </summary>
         private void AddImages()
         {
             List<Tuple<string, ImageSource>> images = imageSources;
@@ -108,12 +112,17 @@ namespace Memory
             }
         }
 
+        /// <summary>
+        /// ziet wanneer je twee kaarten heb omgedraait?
+        /// </summary>
         internal static void handsFull()
         {
             throw new NotImplementedException();
         }
-
-        //Hier wordt een list met 2x8 plaatjes gemaakt, deze worden aangeroepen door de berekening van imageNr Vervolgens wordt er 2x een source aan gekoppeld
+        /// <summary>
+        /// Hier wordt een list met 2x8 plaatjes gemaakt, deze worden aangeroepen door de berekening van imageNr Vervolgens wordt er 2x een source aan gekoppeld
+        /// </summary>
+        
         private List<Tuple<string, ImageSource>> GetImagesList()
         {
             List<Tuple<string, ImageSource>> images = new List<Tuple<string, ImageSource>>();
@@ -128,7 +137,10 @@ namespace Memory
             return Shuffle(images);
         }
 
-        //Zorgt voor het meegeven van een nieuwe source en zorgt voor het omdraaien van de vraagteken
+        /// <summary>
+        /// Zorgt voor het meegeven van een nieuwe source en zorgt voor het omdraaien van de vraagteken en zorgt voor de beurten in multiplayer
+        /// </summary>
+        
         private void CardClick(object sender, MouseButtonEventArgs e)
         {
 
@@ -191,7 +203,9 @@ namespace Memory
         }
 
 
-
+        /// <summary>
+        /// Reset de grid
+        /// </summary>
         public void ResetGrid()
         {
             card1 = null;
@@ -200,7 +214,11 @@ namespace Memory
             AddImages();
         }
 
-        //De functie zorgt voor het randomizen van de eerder aangemaakte list met daarin de source, tag en klik-functie
+
+        ///<summary>
+        ///De functie zorgt voor het randomizen van de eerder aangemaakte list met daarin de source, tag en klik-functie
+        ///</summary>
+        
         private List<Tuple<string, ImageSource>> Shuffle(List<Tuple<string, ImageSource>> imageList)
         {
             Random randomizer = new Random();
@@ -216,6 +234,10 @@ namespace Memory
             return imageList;
         }
 
+        /// <summary>
+        /// Set de beurt naar wie er aan de beurt is
+        /// </summary>
+        /// <returns>de turn met wie er aan de beurt is</returns>
         public string beurt()
         {
             if (player1 == true)
@@ -230,23 +252,36 @@ namespace Memory
             return turn;
         }
 
+        /// <summary>
+        /// Returnt de score1 zodat hij gebruikt kan worden in de andere multiplayer class
+        /// </summary>
+        
         public int score1()
         {
             return Player1Score;
         }
 
+        /// <summary>
+        /// Returnt de score2 zodat hij gebruikt kan worden in de andere multiplayer class
+        /// </summary>
+        
         public int score2()
         {
             return Player2Score;
         }
 
 
-
+        /// <summary>
+        /// Telt hoeveel kaarten er nog ever zijn
+        /// </summary>
         public int getImageCount()
         {
             return matchedImageList.Count;
         }
 
+        /// <summary>
+        /// Set wie er gewonnen heeft
+        /// </summary>
         public void setWin()
         {
             hasWon = true;
