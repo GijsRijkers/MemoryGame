@@ -41,6 +41,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
+
         <Button HorizontalAlignment="Left" Margin="82,0,0,59" VerticalAlignment="Bottom" Click="Button_Click_1" Background="Black" Content="Geluid aan" Foreground="White" Height="40" Width="70" Opacity="0.7">
             <Button.Effect>
                 <DropShadowEffect/>

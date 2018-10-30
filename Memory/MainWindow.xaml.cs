@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Media;
 
+
+
 namespace Memory
 {
     /// <summary>
@@ -64,6 +66,9 @@ namespace Memory
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
             player.Stop();
         }
+
+
+            //SerializableAttribute;
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

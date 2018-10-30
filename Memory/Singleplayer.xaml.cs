@@ -5,7 +5,12 @@ using System.Windows.Threading;
 
 using System.Media;
 using System.IO;
+
+using System.Xml;
+
+
 using System.Configuration;
+
 
 namespace Memory
 
@@ -141,4 +146,24 @@ namespace Memory
            scoreLabel.Content = "Score: " + grid.getScore();
         }
     }
+
+    //class Program
+        //{
+     //   class Memory {
+      //      string playernaam;
+         //   double score;
+            
+           // public Memory (string player, double score);
+
 }
+
+        
+
+        
+
+//}
+
+
+
+
+//}
