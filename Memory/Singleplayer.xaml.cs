@@ -118,14 +118,18 @@ namespace Memory
             mainWindow.Show();
 
         }
-
-        //Muziek aan/uit buttons.
+        /// <summary>
+        /// knop, zet muziek aan.
+        /// </summary>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
             player.PlayLooping();
         }
-
+        /// <summary>
+        /// knop, zet muziek uit.
+        /// </summary>
+        
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);

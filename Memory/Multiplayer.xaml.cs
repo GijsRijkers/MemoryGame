@@ -140,14 +140,18 @@ namespace Memory
             multiPlayerNameSelectWin.Show();
 
         }
-        //Muziek aan/uit buttons.
+        /// <summary>
+        /// knop, zet muziek aan.
+        /// </summary>
         private void geluidaan_Click(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
             player.PlayLooping();
 
         }
-
+        /// <summary>
+        /// knop, zet muziek uit.
+        /// </summary>
         private void Geluiduit_Click(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
