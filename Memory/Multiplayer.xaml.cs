@@ -24,23 +24,32 @@ namespace Memory
     {
         private int time = 59;
         
-        
+        /// <summary>
+        /// Geeft het aantal kolommen in de grid aan
+        /// </summary>
         private const int NR_OF_COLS = 4;
+        /// <summary>
+        /// geeft het aantal rijen in de grid aan
+        /// </summary>
         private const int NR_OF_ROWS = 4;
         MultiplayerMemoryGrid grid;
 
         public MainWindow mainWindow;
         public MultiPlayerNameSelect name;
       
+
+        /// <summary>
+        /// Maakt de grid aan en zorgt dat de muziek begint te spelen
+        /// </summary>
         public Multiplayer(MainWindow mainWindow, MultiPlayerNameSelect nameSelect)
         {
             InitializeComponent();
             grid = new MultiplayerMemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS);
-            //name = new MultiPlayerNameSelect(ReturnPlayer1);
-            //ResetGrid = new MemoryGrid(); 
+
+            player.Play();
             name = nameSelect;
             spelerkleur();
-            //ResetGrid = new MemoryGrid();
+        
             
 
             this.mainWindow = mainWindow;
@@ -48,23 +57,27 @@ namespace Memory
             
 
 
-
-            //MultiplayerMemoryGrid t = multiplayerMemoryGrid;
+            
 
         }
 
-       
-        //public void setPlayer(MulitplayerPlayers player) { player1 = player; }
         
-
+        
+        /// <summary>
+        /// Herkent wanneer de pagina gesloten wordt en opent het mainmenu
+        /// </summary>
         private void MultiplayerClose(object sender, EventArgs e)
         {
             this.Close();
-            mainWindow.Close();
+            mainWindow.Show();
 
             
         }
 
+
+        /// <summary>
+        /// Sluit de pagina wanneer er op de knop van afsluiten aangeklikt wordt sluit de pagina en opent het mainmenu
+        /// </summary>
         private void TerugKlick(object sender, RoutedEventArgs e)
         {
             this.Hide();
@@ -72,7 +85,9 @@ namespace Memory
 
         }
 
-        
+        /// <summary>
+        /// Checkt welke speler er aan de beurt is en past het label op het gamescherm aan op basis van wie er aan de beurt is
+        /// </summary>
         public void spelerkleur()
         {
 
@@ -101,6 +116,9 @@ namespace Memory
 
         }
 
+        /// <summary>
+        /// Wanneer de kaarten op zijn controleert deze methode wiens score het hoogst is en die heeft dan gewonnen
+        /// </summary>
         private void CheckWin()
         {
 
@@ -108,24 +126,22 @@ namespace Memory
             {
                 if (grid.score1() < grid.score2())
                 {
-                    MessageBox.Show(name.ReturnPlayer2() + " heeft gewonnen🎈🎉");
-                    this.Hide();
-                    mainWindow.Show();
+                    MessageBox.Show(name.ReturnPlayer2() + "heeft gewonnen");
                 }
                 else if (grid.score1() == grid.score2())
                 {
-                    MessageBox.Show("Het is gelijkspel🎈🎉");
+                    MessageBox.Show("Het is gelijkspel");
                 }
-
                 else
                 {
-                    MessageBox.Show(name.ReturnPlayer2() + " heeft gewonnen🎈🎉");
-                    this.Hide();
-                    mainWindow.Show();
+                    MessageBox.Show(name.ReturnPlayer2() + "heeft gewonnen");
                 }
             }
         }
 
+        /// <summary>
+        /// Checkt elke keer wanneer er op de grid geklikt wordt wie er aan de beurt is en of de kaarten al op zijn dus wie er gewonnen heeft
+        /// </summary>
         private void Gamegrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             spelerkleur();
@@ -133,6 +149,9 @@ namespace Memory
             
         }
 
+        /// <summary>
+        /// Reset het programma als het ware doormiddel van het huidige window af te sluiten en een nieuwe select name aan te maken
+        /// </summary>
         private void ResetClick(object sender, RoutedEventArgs e)
         {
             this.Hide();
@@ -141,7 +160,7 @@ namespace Memory
 
         }
         /// <summary>
-        /// knop, zet muziek aan.
+        /// muziek aan button
         /// </summary>
         private void geluidaan_Click(object sender, RoutedEventArgs e)
         {
@@ -149,8 +168,9 @@ namespace Memory
             player.PlayLooping();
 
         }
+
         /// <summary>
-        /// knop, zet muziek uit.
+        /// muziek uit button
         /// </summary>
         private void Geluiduit_Click(object sender, RoutedEventArgs e)
         {
