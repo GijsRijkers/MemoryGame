@@ -28,7 +28,8 @@ namespace Memory
         private const int NR_OF_ROWS = 4;
         MemoryGrid grid;
         private MainWindow mainWindow;
-    
+        private Player uPlayer;
+
         //MemoryGrid ResetGrid;
         public Singleplayer(MainWindow mainWindow)
         {
@@ -41,7 +42,7 @@ namespace Memory
             Timer.Start();
             this.mainWindow = mainWindow;
             DataContext = this;
-            scoreLabel.Content =  "Score: " + grid.getScore().ToString();
+            scoreLabel.Content = "Score: " + grid.getScore().ToString();
         }
 
         public void setPlayer(Player player) { uPlayer = player; }
@@ -60,7 +61,7 @@ namespace Memory
 
                 }
 
-                    if (time <= 10)
+                if (time <= 10)
                 {
                     if (time % 2 == 0)
                     {
@@ -85,7 +86,7 @@ namespace Memory
                 // dit zorgt om opniew te beginnen
                 System.Windows.Forms.Application.Restart();
                 TimeSpan t = new TimeSpan();
-                
+
             }
         }
 
@@ -130,40 +131,19 @@ namespace Memory
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
             player.Stop();
-
-
-      
-
-        private void ResetTimeKlick(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-            SinglePlayerNameSelect singleplayernameselect = new SinglePlayerNameSelect(this);
-            singleplayernameselect.Show();
         }
-        
-        public void showScore()
-        {
-           scoreLabel.Content = "Score: " + grid.getScore();
+
+
+            private void ResetTimeKlick(object sender, RoutedEventArgs e)
+            {
+                this.Close();
+                SinglePlayerNameSelect singleplayernameselect = new SinglePlayerNameSelect(this);
+                singleplayernameselect.Show();
+            }
+
+            public void showScore()
+            {
+                scoreLabel.Content = "Score: " + grid.getScore();
+            }
         }
     }
-
-    //class Program
-        //{
-     //   class Memory {
-      //      string playernaam;
-         //   double score;
-            
-           // public Memory (string player, double score);
-
-}
-
-        
-
-        
-
-//}
-
-
-
-
-//}
