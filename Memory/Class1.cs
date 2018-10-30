@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 
 namespace Memory
 {
-    public class SingleplayerMemoryGrid
+    public class MemoryGrid
     {
         private int cols;
         private int rows;
@@ -29,7 +29,7 @@ namespace Memory
         private bool hasWon = false;
 
         //Verwijst naar de grid in het xaml file
-        public SingleplayerMemoryGrid(Grid grid, int cols, int rows)
+        public MemoryGrid(Grid grid, int cols, int rows)
         {
             this.cols = cols;
             this.rows = rows;
