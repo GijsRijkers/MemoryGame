@@ -35,7 +35,7 @@ namespace Memory
 
         private void CloseApp(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
         
         // Opent nameselect window voor SinglePlayer game.
@@ -46,11 +46,11 @@ namespace Memory
             nameSelect.Show();
         }
 
-        private void MulyiplayerClick(object sender, RoutedEventArgs e)
+        private void MultiplayerClick(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Multiplayer multiplayerWin = new Multiplayer(this);
-            multiplayerWin.Show();
+            MultiPlayerNameSelect multiPlayerNameSelectWin = new MultiPlayerNameSelect(this);
+            multiPlayerNameSelectWin.Show();
         }
 
         private void HigscoresClick(object sender, RoutedEventArgs e)
