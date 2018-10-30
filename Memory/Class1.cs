@@ -27,8 +27,29 @@ namespace Memory
         private bool handsfull = false;
 
         private bool hasWon = false;
+        private Singleplayer singlePlayer = null;
+        private int score;
 
         //Verwijst naar de grid in het xaml file
+        public MemoryGrid(Grid grid, int cols, int rows, Singleplayer singlePlayer)
+        {
+            this.cols = cols;
+            this.rows = rows;
+
+            this.grid = grid;
+
+            this.score = 0;
+            this.singlePlayer = singlePlayer;
+
+            imageSources = GetImagesList();
+
+            //Aanmaken van de grid
+            InitializeGameGrid();
+            
+            //Plaatsen van de images op de aangegeven locatie
+            AddImages();
+        }
+
         public MemoryGrid(Grid grid, int cols, int rows)
         {
             this.cols = cols;
@@ -36,11 +57,13 @@ namespace Memory
 
             this.grid = grid;
 
+            this.score = 0;
+
             imageSources = GetImagesList();
 
             //Aanmaken van de grid
             InitializeGameGrid();
-            
+
             //Plaatsen van de images op de aangegeven locatie
             AddImages();
         }
@@ -121,6 +144,7 @@ namespace Memory
         //Zorgt voor het meegeven van een nieuwe source en zorgt voor het omdraaien van de vraagteken
         private void CardClick(object sender, MouseButtonEventArgs e)
         {
+            
             if (handsfull)
             {
                 handsfull = false;
@@ -131,7 +155,7 @@ namespace Memory
             Image card = (Image)sender;
             ImageSource front = (ImageSource)card.Tag;
             card.Source = front;
-
+            card.IsEnabled = false;
             // Pak kaart 2
             if (card1 != null && card2 == null)
             {
@@ -150,12 +174,18 @@ namespace Memory
                 {
                     matchedImageList.Add(card1.Uid);
                     handsfull = true;
+
+                    score += 10;
+                    MessageBox.Show(Convert.ToString(score));
                 }
                 else
                 {
                     handsfull = true;
+                    score -= 1;
+                    MessageBox.Show(Convert.ToString(score));
                 }
             }
+            singlePlayer?.showScore();
         }
 
         public void ResetGrid()
@@ -191,6 +221,11 @@ namespace Memory
         public void setWin()
         {
             hasWon = true;
+        }
+
+        public int getScore()
+        {
+            return score;
         }
     }
 }

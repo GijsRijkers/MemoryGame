@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -57,12 +60,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Higscores.xaml.cs">
-      <DependentUpon>Higscores.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Multiplayer.xaml.cs">
       <DependentUpon>Multiplayer.xaml</DependentUpon>
     </Compile>
+    
     <Compile Include="Resources\Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -73,16 +74,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource2.resx</DependentUpon>
     </Compile>
+
+    <Compile Include="Player.cs" />
+    
     <Compile Include="Singleplayer.xaml.cs">
       <DependentUpon>Singleplayer.xaml</DependentUpon>
     </Compile>
     <Compile Include="SinglePlayerNameSelect.xaml.cs">
       <DependentUpon>SinglePlayerNameSelect.xaml</DependentUpon>
     </Compile>
-    <Page Include="Higscores.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

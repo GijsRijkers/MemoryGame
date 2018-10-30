@@ -20,7 +20,7 @@
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="btnStartPauze" Content="Start/Pause" HorizontalAlignment="Left" Height="31" Margin="967,457,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="btnStartPauze_Click" Foreground="White">
+            <Button x:Name="btnStartPauze" Content="Start/Pause" HorizontalAlignment="Left" Height="31" Margin="967,421,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="btnStartPauze_Click" Foreground="White">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
@@ -44,6 +44,13 @@
                 </Button.Effect>
             </Button>
 
+            <Button x:Name="btnResetTime" Content="ResetTime" HorizontalAlignment="Left" Height="33" Margin="967,457,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="ResetTimeKlick" Foreground="White">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+          
+            <Label Content="Score: " Name="scoreLabel" HorizontalAlignment="Left" Margin="967,135,0,0" VerticalAlignment="Top"/>
 
         </Grid>
     </Grid>

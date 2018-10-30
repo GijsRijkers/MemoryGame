@@ -54,8 +54,8 @@ namespace Memory
         private void HigscoresClick(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Higscores higscoresWin = new Higscores(this);
-            higscoresWin.Show();
+            //Higscores higscoresWin = new Higscores(this);
+            //higscoresWin.Show();
 
         }
         //Muziek aan/uit buttons.
