@@ -23,19 +23,23 @@ namespace Memory
         
         private MainWindow mainWindow;
         private Multiplayer multiPlayer;
-        //private MulitplayerPlayers player1;
         public string player1;
         public string player2;
 
-        //public string userNameP1 { get; set; }
-        //public string userNameP2 { get; set; }
+        /// <summary>
+        /// Set dit als mainwindow in?
+        /// </summary>
+        /// <param name="mainWindow"></param>
         public MultiPlayerNameSelect(MainWindow mainWindow)
         {
             
             InitializeComponent();
             this.mainWindow = mainWindow;
-            //DataContext = this;
         }
+
+        /// <summary>
+        /// stelt dit in als multiplayer?
+        /// </summary>
 
         public MultiPlayerNameSelect(Multiplayer multiPlayer)
         {
@@ -47,6 +51,11 @@ namespace Memory
 
         }
 
+
+        /// <summary>
+        /// Sluit bij het drukken van de knop deze window en opent de mainwindow
+        /// </summary>
+
         private void BackToMainMenuClick(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -54,27 +63,36 @@ namespace Memory
             mainWindow.Show();
         }
 
+        /// <summary>
+        /// Returnt speler 1 zodat hij later herroepen kan worden
+        /// </summary>
+        /// <returns></returns>
         public string ReturnPlayer1()
         {
             
             return player1;
         }
 
+        /// <summary>
+        /// Returnt speler 2 zodat hij later herroepen kan worden
+        /// </summary>
+        /// <returns></returns>
         public string ReturnPlayer2()
         {
             
             return player2;
         }
 
-
+        /// <summary>
+        /// Op het drukken van de knop sluit deze window en worden de variabelen player1 en player2 naar de ingevoerde namen geset
+        /// en opent daarna het multiplayer gamescherm
+        /// </summary>
         private void startMpGame(object sender, RoutedEventArgs e)
         {
             player1 = Player1.Text;
             player2 = Player2.Text;
             this.Close();
             Multiplayer MultiplayerWin = new Multiplayer(mainWindow, this);
-            //userNameP1 = userNameP1.ToString();
-            //userNameP2 = userNameP2.ToString();
 
             
             

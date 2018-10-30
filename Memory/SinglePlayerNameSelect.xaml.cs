@@ -26,6 +26,7 @@ namespace Memory
         private Singleplayer singlePlayer;
         private double uHighScore;
         private Player tempPlayerOne;
+        private SingleplayerEasy singleplayerEasy;
 
         public string userNameP1 { get; set; }
 
@@ -42,6 +43,11 @@ namespace Memory
             this.singlePlayer = singlePlayer;
         }
 
+        public SinglePlayerNameSelect(SingleplayerEasy singleplayerEasy)
+        {
+            this.singleplayerEasy = singleplayerEasy;
+        }
+
         private void BackToMainMenuClick(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -53,12 +59,27 @@ namespace Memory
         {
             this.Close();
             Singleplayer SingleplayerWin = new Singleplayer(mainWindow);
+             userNameP1 = userNameP1.ToString();
+            uHighScore = 0;
+
+            userNameP1 = userNameP1.ToString();
+            uHighScore = 0;
+        }
+
+        /// <summary>
+        /// Start het makkelijke spel van singleplayer
+        /// </summary>
+        private void startSpGameEasy(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            SingleplayerEasy SingleplayerEasyWin = new SingleplayerEasy(mainWindow);
             userNameP1 = userNameP1.ToString();
             uHighScore = 0;
 
-            tempPlayerOne = new Player(userNameP1, uHighScore);
-            SingleplayerWin.setPlayer(tempPlayerOne);
-            SingleplayerWin.Show();
+            userNameP1 = userNameP1.ToString();
+            uHighScore = 0;
+
+
         }
     }
 
