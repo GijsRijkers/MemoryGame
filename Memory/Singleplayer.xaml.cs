@@ -8,7 +8,7 @@ using System.IO;
 
 using System.Xml;
 
-
+using System.Collections.Generic;
 using System.Configuration;
 
 
@@ -20,7 +20,7 @@ namespace Memory
     /// </summary>
     public partial class Singleplayer : Window
     {
-
+        
         private int time = 59;
 
         private DispatcherTimer Timer;
@@ -30,7 +30,7 @@ namespace Memory
         private MainWindow mainWindow;
         private Player uPlayer;
 
-        //MemoryGrid ResetGrid;
+        
         public Singleplayer(MainWindow mainWindow)
         {
             InitializeComponent();
@@ -46,7 +46,12 @@ namespace Memory
         }
 
         public void setPlayer(Player player) { uPlayer = player; }
-
+        /// <summary>
+        /// dit object zorgt ervoor dat op moment als de timer onder de 10 seconden staat begint geeft de timer in rood en wit en
+        /// als de tijd voorbij is geeft een messagebox aan.
+        /// 
+        /// </summary>
+        
         private void Timer_Tick(object sender, EventArgs e)
         {
             if (time > 0)
@@ -78,8 +83,7 @@ namespace Memory
             else
             {
                 Timer.Stop();
-                // niet gelukt, andere oplossing (tijdelijk) gevonden 
-                //MemoryGrid t = ResetGrid;
+                
                 MessageBox.Show("Out of time! Druk op Ok om opnieuw te starten !");
                 // dit zorgt dat de huidige spel afgesloten
                 Application.Current.Shutdown();
@@ -89,7 +93,12 @@ namespace Memory
 
             }
         }
+        /// <summary>
+        /// de event handeler zorgt ervoor dat op moment op start geklikt wordt start methode aangeropen om verder met timer te gaan en 
+        /// op moment pause geklikt stop method wordt aangeroepen om de timer te stoppen.
+        /// </summary>
 
+      
         private void btnStartPauze_Click(object sender, RoutedEventArgs e)
         {
             btnStartPauze.Content = btnStartPauze.Content == "Start" ? "Pause" : "Start";
@@ -133,6 +142,11 @@ namespace Memory
             player.Stop();
         }
 
+        /// <summary>
+        /// deze functie zorgt ervoor dat de Timer gereset naar standard waarde. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
             private void ResetTimeKlick(object sender, RoutedEventArgs e)
             {

@@ -23,7 +23,7 @@
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <TextBlock x:Name="TBCountDown" HorizontalAlignment="Right" Margin="0,87,45,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="60" Width="122" FontSize="26" FontFamily="Segoe UI Light"></TextBlock>
+            <TextBlock x:Name="TBCountDown" HorizontalAlignment="Right" Margin="0,87,39,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="60" Width="122" FontSize="26" FontFamily="Segoe UI Light"></TextBlock>
             <Button Content="Opslaan" HorizontalAlignment="Left" Height="33" Margin="967,531,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="TerugKlick" Foreground="White">
                 <Button.Effect>
                     <DropShadowEffect/>
