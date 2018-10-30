@@ -84,15 +84,18 @@ namespace Memory
             if (btnStartPauze.Content == "Start")
             {
                 Timer.Stop();
-                MessageBox.Show("Pause Game");                
+                
+                
             }
+                
             else
             {
-                MessageBox.Show("Start Game");
+                
                 Timer.Start();
 
             }
-
+            
+            
         }
 
         private void SingleplayerClose(object sender, EventArgs e)

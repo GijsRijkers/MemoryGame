@@ -113,6 +113,15 @@ namespace Memory
 
         }
 
+      
+
+        private void ResetTimeKlick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            SinglePlayerNameSelect singleplayernameselect = new SinglePlayerNameSelect(this);
+            singleplayernameselect.Show();
+        }
+        
         public void showScore()
         {
            scoreLabel.Content = "Score: " + grid.getScore();
