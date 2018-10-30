@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Memory"
         mc:Ignorable="d"
          
-        Title="Multiplayer" Background="#FFD69E9E" Height="615.333" Width="1142.667" Visibility="Visible" Closed="MultiplayerClose">
+        Title="Multiplayer" Background="#FFD69E9E" Height="615.333" Width="1142.667" Visibility="Visible" Closed="MultiplayerClose" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,144,72">
         <Grid x:Name="Page" Height="587" VerticalAlignment="Top" Margin="-13,0,-143,-73.4">
             <Grid.Background>
