@@ -33,12 +33,14 @@
                 </Button.Effect>
             </Button>
             <Image HorizontalAlignment="Center" Height="60" VerticalAlignment="Top" Width="270" Source="Resources/Logo.png" Margin="905,4,-28,0"/>
+
             <Button x:Name="btnResetTime" Content="ResetTime" HorizontalAlignment="Left" Height="33" Margin="967,457,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="ResetTimeKlick" Foreground="White">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-
+          
+            <Label Content="Score: " Name="scoreLabel" HorizontalAlignment="Left" Margin="967,135,0,0" VerticalAlignment="Top"/>
 
         </Grid>
     </Grid>
