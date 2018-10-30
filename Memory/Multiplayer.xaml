@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Memory"
         mc:Ignorable="d"
-        Title="Multiplayer" Background="#FFD69E9E" Height="615.333" Width="1142.667" Visibility="Visible" Closed="SingleplayerClose">
+        Title="Multiplayer" Background="#FFD69E9E" Height="615.333" Width="1142.667" Visibility="Visible" Closed="MultiplayerClose">
     <Grid Margin="0,0,144,72">
         <Grid x:Name="Page" Height="672" VerticalAlignment="Top" Margin="-13,0,-143,-161">
             <Grid.Background>
@@ -14,18 +14,12 @@
                     <GradientStop Color="White"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <Grid x:Name="Gamegrid" Margin="0,4,192,85" Background="White"/>
+            <Grid x:Name="Gamegrid" Margin="0,4,192,85" Background="White" MouseDown="Gamegrid_MouseDown"/>
             <Button Content="Hoofdmenu" HorizontalAlignment="Left" Height="33" Margin="967,493,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="TerugKlick" Foreground="White">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="btnStartPauze" Content="Start/Pause" HorizontalAlignment="Left" Height="31" Margin="967,457,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="btnStartPauze_Click" Foreground="White">
-                <Button.Effect>
-                    <DropShadowEffect/>
-                </Button.Effect>
-            </Button>
-            <Label Content="HIER&#xD;&#xA;KOMT &#xD;&#xA;DE &#xD;&#xA;HIGH&#xD;&#xA;SCORE&#xD;&#xA;" HorizontalAlignment="Left" Height="250" Margin="967,166,0,0" VerticalAlignment="Top" Width="135" Background="{x:Null}" FontSize="48" RenderTransformOrigin="0.456,0.522"/>
             <TextBlock x:Name="TBCountDown" HorizontalAlignment="Right" Margin="0,87,45,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="60" Width="122" FontSize="26" FontFamily="Segoe UI Light"></TextBlock>
             <Button Content="Opslaan" HorizontalAlignment="Left" Height="33" Margin="967,531,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="TerugKlick" Foreground="White">
                 <Button.Effect>
@@ -33,8 +27,15 @@
                 </Button.Effect>
             </Button>
             <Image HorizontalAlignment="Center" Height="60" VerticalAlignment="Top" Width="270" Source="Resources/Logo.png" Margin="905,4,-28,0"/>
+            <Button Content="Reset" HorizontalAlignment="Left" Height="33" Margin="967,445,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="ResetClick" Foreground="White">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
 
 
         </Grid>
+        <Label x:Name="speler1" Content="Speler1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="950,200,-138,0" Height="85" Width="180"/>
+        <Label x:Name="speler2" Content="Speler2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="950,320,-138,0" Height="95" Width="180"/>
     </Grid>
 </Window>

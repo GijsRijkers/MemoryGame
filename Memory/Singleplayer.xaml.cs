@@ -29,7 +29,7 @@ namespace Memory
         private DispatcherTimer Timer;
         private const int NR_OF_COLS = 4;
         private const int NR_OF_ROWS = 4;
-        MemoryGrid grid;
+        SingleplayerMemoryGrid grid;
         System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.sound);
         private MainWindow mainWindow;
 
@@ -37,7 +37,7 @@ namespace Memory
         public Singleplayer(MainWindow mainWindow)
         {
             InitializeComponent();
-            grid = new MemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS);
+            grid = new SingleplayerMemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS);
             //ResetGrid = new MemoryGrid();
             Timer = new DispatcherTimer();
             Timer.Interval = new TimeSpan(0, 0, 1);

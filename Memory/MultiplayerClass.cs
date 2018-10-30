@@ -12,10 +12,17 @@ using System.Windows.Media.Imaging;
 
 namespace Memory
 {
-    public class MemoryGrid
+    class MultiplayerMemoryGrid
     {
         private int cols;
         private int rows;
+
+        private bool player1 = true;
+        private bool player2 = false;
+
+        public string turn;
+        public int Player1Score = 0;
+        public int Player2Score = 0;
 
         private Image card1 = null;
         private Image card2 = null;
@@ -28,8 +35,10 @@ namespace Memory
 
         private bool hasWon = false;
 
+
+
         //Verwijst naar de grid in het xaml file
-        public MemoryGrid(Grid grid, int cols, int rows)
+        public MultiplayerMemoryGrid(Grid grid, int cols, int rows)
         {
             this.cols = cols;
             this.rows = rows;
@@ -40,14 +49,14 @@ namespace Memory
 
             //Aanmaken van de grid
             InitializeGameGrid();
-            
+
             //Plaatsen van de images op de aangegeven locatie
             AddImages();
         }
 
 
         private void InitializeGameGrid()
-        {   
+        {
             //Zorgt ervoor dat het systeem de row herkent
             for (int i = 0; i < this.rows; i++)
             {
@@ -121,6 +130,10 @@ namespace Memory
         //Zorgt voor het meegeven van een nieuwe source en zorgt voor het omdraaien van de vraagteken
         private void CardClick(object sender, MouseButtonEventArgs e)
         {
+
+
+
+
             if (handsfull)
             {
                 handsfull = false;
@@ -145,18 +158,38 @@ namespace Memory
 
             if (card1 != null && card2 != null)
             {
+                beurt();
                 var x = card1;
                 if (card1.Uid == card2.Uid)
                 {
                     matchedImageList.Add(card1.Uid);
                     handsfull = true;
+
+                    if (player1 == true)
+                    {
+                        Player1Score += 1;
+                    }
+                    else if (player2 == true)
+                    {
+                        Player2Score += 1;
+                    }
+
+
                 }
                 else
                 {
                     handsfull = true;
+                    player1 = !player1;
+                    player2 = !player2;
+
                 }
+
+
+
             }
         }
+
+
 
         public void ResetGrid()
         {
@@ -165,9 +198,9 @@ namespace Memory
             this.grid.Children.Clear();
             AddImages();
         }
-        
+
         //De functie zorgt voor het randomizen van de eerder aangemaakte list met daarin de source, tag en klik-functie
-        private List<Tuple<string, ImageSource>> Shuffle(List<Tuple<string,ImageSource>> imageList)
+        private List<Tuple<string, ImageSource>> Shuffle(List<Tuple<string, ImageSource>> imageList)
         {
             Random randomizer = new Random();
             int n = imageList.Count;
@@ -182,7 +215,32 @@ namespace Memory
             return imageList;
         }
 
-       
+        public string beurt()
+        {
+            if (player1 == true)
+            {
+                turn = "player1";
+            }
+            else if (player2 == true)
+            {
+                turn = "player2";
+            }
+
+            return turn;
+        }
+
+        public int score1()
+        {
+            return Player1Score;
+        }
+
+        public int score2()
+        {
+            return Player2Score;
+        }
+
+
+
         public int getImageCount()
         {
             return matchedImageList.Count;

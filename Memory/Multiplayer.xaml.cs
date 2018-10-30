@@ -23,87 +23,109 @@ namespace Memory
     public partial class Multiplayer : Window
     {
         private int time = 59;
-
-        private DispatcherTimer Timer;
+        
+        
         private const int NR_OF_COLS = 4;
         private const int NR_OF_ROWS = 4;
-        MemoryGrid grid;
-        System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.sound);
-        private MainWindow mainWindow;
+        MultiplayerMemoryGrid grid;
 
-        public Multiplayer(MainWindow mainWindow)
+
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.sound);
+        public MainWindow mainWindow;
+        public MultiPlayerNameSelect name;
+        
+        //private MultiplayerMemoryGrid multiplayerMemoryGrid;
+
+        //private MulitplayerPlayers player1;
+
+        public Multiplayer(MainWindow mainWindow, MultiPlayerNameSelect nameSelect)
         {
             InitializeComponent();
-            grid = new MemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS);
-            //ResetGrid = new MemoryGrid();
-            Timer = new DispatcherTimer();
-            Timer.Interval = new TimeSpan(0, 0, 1);
-            Timer.Tick += Timer_Tick;
-            Timer.Start();
+            grid = new MultiplayerMemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS);
+            //name = new MultiPlayerNameSelect(ReturnPlayer1);
+            //ResetGrid = new MemoryGrid(); 
             player.Play();
+            name = nameSelect;
+            spelerkleur();
             this.mainWindow = mainWindow;
-        }
 
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            if (time > 0)
-            {
-                if (time <= 10)
-                {
-                    if (time % 2 == 0)
-                    {
-                        TBCountDown.Foreground = Brushes.Red;
-                    }
-                    else
-                    {
-                        TBCountDown.Foreground = Brushes.White;
-                    }
-                }
-                time--;
-                TBCountDown.Text = String.Format("00:0{0}:{1}", time / 60, time % 60);
-            }
-            else
-            {
-                Timer.Stop();
-                // niet gelukt, andere oplossing (tijdelijk) gevonden 
-                //MemoryGrid t = ResetGrid;
-                MessageBox.Show("Out of time Druk op Ok om opnieuw te starten !");
-                // dit zorgt dat de huidige spel afgesloten
-                Application.Current.Shutdown();
-                // dit zorgt om opniew te beginnen
-                System.Windows.Forms.Application.Restart();
-                TimeSpan t = new TimeSpan();
+            
 
 
-            }
-        }
 
-        private void btnStartPauze_Click(object sender, RoutedEventArgs e)
-        {
-            btnStartPauze.Content = btnStartPauze.Content == "Start" ? "Pause" : "Start";
-            if (btnStartPauze.Content == "Start")
-            {
-                Timer.Stop();
-                MessageBox.Show("Pause Game");                
-            }
-            else
-            {
-                MessageBox.Show("Start Game");
-                Timer.Start();
-
-            }
+            //MultiplayerMemoryGrid t = multiplayerMemoryGrid;
 
         }
 
-        private void SingleplayerClose(object sender, EventArgs e)
+       
+        //public void setPlayer(MulitplayerPlayers player) { player1 = player; }
+        
+
+        private void MultiplayerClose(object sender, EventArgs e)
         {
-            mainWindow.Show();
+            this.Close();
+            mainWindow.Close();
+
+            
         }
 
         private void TerugKlick(object sender, RoutedEventArgs e)
         {
             this.Close();
             mainWindow.Show();
+
+        }
+
+        
+        public void spelerkleur()
+        {
+
+
+            if (grid.beurt() == "player1")
+            {
+                speler1.FontSize = 20;
+                speler1.Content = name.ReturnPlayer1() + " score :" + grid.score1();
+                speler1.Background = Brushes.Purple;
+                speler2.FontSize = 10;
+                speler2.Content = name.ReturnPlayer2() + " score :" + grid.score2();
+                speler2.Background = Brushes.Transparent;
+            }               
+
+                else if (grid.beurt() == "player2")
+                {
+                speler1.FontSize = 10;
+                speler1.Content = name.ReturnPlayer1() + " score :" + grid.score1();
+                speler1.Background = Brushes.Transparent;
+                speler2.FontSize = 20;
+                speler2.Content = name.ReturnPlayer2() + " score :" + grid.score2();
+                speler2.Background = Brushes.Purple;
+                }
+                
+
+
+        }
+
+        private void CheckWin()
+        {
+            if (grid.getImageCount() == 8)
+            {
+                MessageBox.Show("kees");
+            }
+
+        }
+
+        private void Gamegrid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            spelerkleur();
+            CheckWin();
+            
+        }
+
+        private void ResetClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            MultiPlayerNameSelect multiPlayerNameSelectWin = new MultiPlayerNameSelect(this);
+            multiPlayerNameSelectWin.Show();
 
         }
     }
