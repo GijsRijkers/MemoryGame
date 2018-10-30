@@ -81,7 +81,6 @@ namespace Memory
             {
                 grid.ColumnDefinitions.Add(new ColumnDefinition());
             }
-
         }
 
         //Op iedere rij wordt plaats gemaakt voor een image met achtergrondplaatje

@@ -14,8 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Media;
-
-
+using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
 
 namespace Memory
 {
@@ -24,13 +25,14 @@ namespace Memory
     /// </summary>
     public partial class MainWindow : Window
     {
-        
-        
+
+
         //MemoryGrid ResetGrid;
 
         public MainWindow()
         {
             InitializeComponent();
+            getWorkSheet();
         }
 
         private void CloseApp(object sender, RoutedEventArgs e)
@@ -75,5 +77,35 @@ namespace Memory
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
             player.Play();
         }
+
+        private void getWorkSheet()
+        {
+            // Het verbinden van de path die nodig om de locatie te vinden van de Excel worksheet (highscores.xlsx).
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string path = string.Format("{0}Resources\\highscores", System.IO.Path.GetFullPath(System.IO.Path.Combine(RunningPath, @"..\..\")));
+            if (!File.Exists(path))
+            {
+                    Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+
+                    Excel.Workbook xlWorkBook;
+                    Excel.Worksheet xlWorkSheet;
+                    object misValue = System.Reflection.Missing.Value;
+
+                    xlWorkBook = xlApp.Workbooks.Add(misValue);
+                    xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                    xlWorkSheet.Cells[1, 1] = "ID";
+                    xlWorkSheet.Cells[1, 2] = "Name";
+                    xlWorkSheet.Cells[1, 2] = "Score";
+
+                    xlWorkBook.SaveAs(path + "\\highscores.xls", FileFormat: Excel.XlFileFormat.xlWorkbookNormal, Password: misValue, WriteResPassword: misValue, ReadOnlyRecommended: misValue, CreateBackup: misValue, AccessMode: Excel.XlSaveAsAccessMode.xlExclusive, ConflictResolution: misValue, AddToMru: misValue, TextCodepage: misValue, TextVisualLayout: misValue, Local: misValue);
+                    xlWorkBook.Close(true, misValue, misValue);
+                    xlApp.Quit();
+
+                    Marshal.ReleaseComObject(xlWorkSheet);
+                    Marshal.ReleaseComObject(xlWorkBook);
+                    Marshal.ReleaseComObject(xlApp);
+                }
+            }
+        }
     } 
-}
