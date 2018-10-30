@@ -57,8 +57,6 @@ namespace Memory
                     MessageBox.Show("Je hebt gewonnen! \n" + String.Format("00:0{0}:{1}", time / 60, time % 60));
                     Timer.Stop();
 
-                    MessageBox.Show(uPlayer.getName());
-
                 }
 
                 if (time <= 10)
@@ -110,23 +108,28 @@ namespace Memory
         private void SingleplayerClose(object sender, EventArgs e)
         {
             Timer.Stop(); // Timer.Stop toegevoegd aangezien dit nog niet gedaan was.
+           
             mainWindow.Show();
         }
 
         private void TerugKlick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.Hide();
             mainWindow.Show();
 
         }
-
-        //Muziek aan/uit buttons.
+        /// <summary>
+        /// knop, zet muziek aan.
+        /// </summary>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
             player.PlayLooping();
         }
-
+        /// <summary>
+        /// knop, zet muziek uit.
+        /// </summary>
+        
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
@@ -136,10 +139,12 @@ namespace Memory
 
             private void ResetTimeKlick(object sender, RoutedEventArgs e)
             {
-                this.Close();
-                SinglePlayerNameSelect singleplayernameselect = new SinglePlayerNameSelect(this);
-                singleplayernameselect.Show();
-            }
+            this.Close();
+            SinglePlayerNameSelect singleplayernameselect = new SinglePlayerNameSelect(this);
+            singleplayernameselect.Show();
+
+            
+        }
 
             public void showScore()
             {
