@@ -33,31 +33,17 @@ namespace Memory
         System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.sound);
         public MainWindow mainWindow;
         public MultiPlayerNameSelect name;
-        
-        //private MultiplayerMemoryGrid multiplayerMemoryGrid;
-
-        MemoryGrid grid;
-        private MainWindow mainWindow;
-
-        //private MulitplayerPlayers player1;
-
+      
         public Multiplayer(MainWindow mainWindow, MultiPlayerNameSelect nameSelect)
         {
             InitializeComponent();
-
             grid = new MultiplayerMemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS);
             //name = new MultiPlayerNameSelect(ReturnPlayer1);
             //ResetGrid = new MemoryGrid(); 
             player.Play();
             name = nameSelect;
             spelerkleur();
-
-            grid = new MemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS);
             //ResetGrid = new MemoryGrid();
-            Timer = new DispatcherTimer();
-            Timer.Interval = new TimeSpan(0, 0, 1);
-            Timer.Tick += Timer_Tick;
-            Timer.Start();
             
 
             this.mainWindow = mainWindow;
@@ -124,24 +110,7 @@ namespace Memory
             if (grid.getImageCount() == 8)
             {
                 MessageBox.Show("kees");
-
-            btnStartPauze.Content = btnStartPauze.Content == "Start" ? "Pause" : "Start";
-            if (btnStartPauze.Content == "Start")
-            {
-                Timer.Stop();
-                
-                
             }
-                
-            else
-            {
-                
-                Timer.Start();
-
-
-            }
-            
-            
         }
 
         private void Gamegrid_MouseDown(object sender, MouseButtonEventArgs e)
