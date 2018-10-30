@@ -40,6 +40,7 @@ namespace Memory
         /// //Verwijst naar de grid in het xaml file, maakt de grid en voegt de plaatjes toe
         /// </summary>
         //Verwijst naar de grid in het xaml file
+
         public MultiplayerMemoryGrid(Grid grid, int cols, int rows)
         {
             this.cols = cols;

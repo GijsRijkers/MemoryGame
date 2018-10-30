@@ -98,7 +98,6 @@ namespace Memory
             {
                 grid.ColumnDefinitions.Add(new ColumnDefinition());
             }
-
         }
         
         /// <summary>
