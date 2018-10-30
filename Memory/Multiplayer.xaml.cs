@@ -46,7 +46,7 @@ namespace Memory
             InitializeComponent();
             grid = new MultiplayerMemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS);
 
-            player.Play();
+            //player.Play();
             name = nameSelect;
             spelerkleur();
         

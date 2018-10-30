@@ -58,6 +58,7 @@ namespace Memory
         
         public SinglePlayerNameSelect(SingleplayerEasy singleplayerEasy)
         {
+            InitializeComponent();
             this.singleplayerEasy = singleplayerEasy;
         }
 
@@ -110,10 +111,6 @@ namespace Memory
              * Vult de parameters met de juiste variabelen
              * Laat het scherm SinglePlayerWin zien. 
              * */
-            tempPlayerOne = new Player(userNameP1, uHighScore);
-            SingleplayerWin.setPlayer(tempPlayerOne);
-
-            SingleplayerWin.Show();
         }
     }
 }

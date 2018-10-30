@@ -72,22 +72,25 @@ namespace Memory
         }
 
 
-            //SerializableAttribute;
-            /// <summary>
-            /// knop, zet muziek uit.
-            /// </summary>
+        //SerializableAttribute;
+        /// <summary>
+        /// knop, zet muziek uit.
+        /// </summary>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
             player.Play();
         }
 
+        /// <summary>
+        /// Zoekt de Excel worksheet voor de highscores.
+        /// </summary>
         private void getWorkSheet()
         {
             // Het verbinden van de path die nodig om de locatie te vinden van de Excel worksheet (highscores.xlsx).
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
             string path = string.Format("{0}Resources\\highscores", System.IO.Path.GetFullPath(System.IO.Path.Combine(RunningPath, @"..\..\")));
-            if (!File.Exists(path))
+            if (!File.Exists(path + "\\highscores.xls"))
             {
                     Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
 

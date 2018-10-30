@@ -13,7 +13,6 @@ using System.Configuration;
 
 
 namespace Memory
-
 {
     /// <summary>
     /// Interaction logic for Singleplayer.xaml
@@ -29,7 +28,7 @@ namespace Memory
         private const int NR_OF_ROWS = 4;
         MemoryGrid grid;
         private MainWindow mainWindow;
-        private Player uPlayer;
+        public Player uPlayer;
 
         /// <summary>
         /// Dit is de constructor van de Singleplayer class. In de constructor wordt alles wat voorbereid moet worden, voorbereid. 
@@ -72,7 +71,7 @@ namespace Memory
                     Timer.Stop();
 
                     // De highscore van de speler wordt gekoppeld aan de speler. 
-                    uPlayer.setHighScore(grid.getScore());
+                    //uPlayer.setHighScore(grid.getScore());
                 }
 
                 // Als de tijd kleiner is dan 10 seconden....
@@ -185,13 +184,6 @@ namespace Memory
             singleplayernameselect.Show();
         }
 
-private void ResetTimeKlick(object sender, RoutedEventArgs e)
-            {
-            this.Close();
-            SinglePlayerNameSelect singleplayernameselect = new SinglePlayerNameSelect(this);
-            singleplayernameselect.Show();
-        }
-
         /// <summary>
         /// Laat de score zien die de speler heeft behaald. Dit kan tijdens de game aangeroepen worden, of na de game. 
         /// </summary>
@@ -199,7 +191,5 @@ private void ResetTimeKlick(object sender, RoutedEventArgs e)
         {
           scoreLabel.Content = "Score: " + grid.getScore();
         }
-
-        }
-      }
     }
+ }

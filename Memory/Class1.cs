@@ -208,7 +208,13 @@ namespace Memory
                     score -= 1;
                 }
             }
-            singlePlayer?.showScore();
+
+            // Als SinglePlayer bestaat, laat de score zien.
+            if (singlePlayer != null)
+            {
+                singlePlayer?.showScore();
+            }
+
         }
 
         /// <summary>
