@@ -33,6 +33,9 @@ namespace Memory
         private Singleplayer singlePlayer = null;
         private int score;
 
+        public Player uPlayer;
+        public SinglePlayerNameSelect singlePlayerWin;
+
         /// <summary>
         /// Verwijst naar de parameters hieronder in de grid voor singlePlayer
         /// </summary>
@@ -40,7 +43,7 @@ namespace Memory
         /// <param name="cols">Zijn de verticale rijen</param>
         /// <param name="rows">Zijn de horizontale rijen</param>
         /// <param name="singlePlayer">Verwijst naar het singleplayerscherm</param>
-        
+
         public MemoryGrid(Grid grid, int cols, int rows, Singleplayer singlePlayer)
         {
             this.cols = cols;
@@ -59,6 +62,7 @@ namespace Memory
             //Plaatsen van de images op de aangegeven locatie
             AddImages();
         }
+
         /// <summary>
         /// Verwijst naar de parameters hieronder in de grid
         /// </summary>
@@ -82,6 +86,8 @@ namespace Memory
             //Plaatsen van de images op de aangegeven locatie
             AddImages();
         }
+
+        public void setPlayer(Player player) { uPlayer = player; }
 
         /// <summary>
         /// Zorgt voor het herkennen van de row en column
