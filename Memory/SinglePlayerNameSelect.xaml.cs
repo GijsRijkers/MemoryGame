@@ -85,11 +85,10 @@ namespace Memory
             
             //Creeer een nieuw object SinglePlayerWin(dow).
             Singleplayer SingleplayerWin = new Singleplayer(mainWindow);
-             userNameP1 = userNameP1.ToString();
-            uHighScore = 0;
-
             userNameP1 = userNameP1.ToString();
             uHighScore = 0;
+            tempPlayerOne = new Player(userNameP1, uHighScore);
+            SingleplayerWin.setPlayer(tempPlayerOne);
         }
 
         /// <summary>
@@ -104,13 +103,6 @@ namespace Memory
 
             userNameP1 = userNameP1.ToString();
             uHighScore = 0;
-
-
-            /*
-             * Creeert een nieuw object van Player.
-             * Vult de parameters met de juiste variabelen
-             * Laat het scherm SinglePlayerWin zien. 
-             * */
         }
     }
 }
