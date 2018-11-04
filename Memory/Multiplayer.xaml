@@ -38,9 +38,7 @@
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-
-    </Button.Effect>
-            </Button>
+            
             <Button x:Name="Geluiduit" Content="Geluid uit" HorizontalAlignment="Right" Margin="0,0,14,140" VerticalAlignment="Bottom" Width="75" Background="#FFCA1818" Foreground="White" Height="31" Click="Geluiduit_Click">
                 <Button.Effect>
                     <DropShadowEffect/>
