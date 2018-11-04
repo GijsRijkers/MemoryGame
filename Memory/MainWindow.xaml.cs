@@ -25,7 +25,6 @@ namespace Memory
     /// </summary>
     public partial class MainWindow : Window
     {
-
         public Excel.Application xlApp;
         public Excel.Workbook xlWorkBook;
         public Excel.Worksheet xlWorkSheet;

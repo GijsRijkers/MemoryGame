@@ -2,13 +2,9 @@
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
-
 using System.Media;
 using System.IO;
-
 using System.Xml;
-
-
 using System.Configuration;
 using System.Runtime.InteropServices;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -149,7 +145,7 @@ namespace Memory
         /// <param name="e">Name of EventArgs</param>
         private void SingleplayerClose(object sender, EventArgs e)
         {
-            closeExcelApp();
+            //closeExcelApp();
             Timer.Stop(); // Timer.Stop toegevoegd aangezien dit nog niet gedaan was.
             mainWindow.Show();
         }
@@ -161,7 +157,7 @@ namespace Memory
         /// <param name="e">Name of EventArgs</param>
         private void TerugKlick(object sender, RoutedEventArgs e)
         {
-            closeExcelApp();
+            //closeExcelApp();
             this.Hide();
             mainWindow.Show();
         }
@@ -196,7 +192,7 @@ namespace Memory
         private void ResetTimeKlick(object sender, RoutedEventArgs e)
         {
             this.Close();
-            closeExcelApp();
+            //closeExcelApp();
             SinglePlayerNameSelect singleplayernameselect = new SinglePlayerNameSelect(this);
             singleplayernameselect.Show();
         }
@@ -241,12 +237,12 @@ namespace Memory
             xlApp.Quit();
         }
 
-        public void closeExcelApp()
-        {
-            wb.SaveAs(path + "\\highscorestest.xls");
-            wb.Close(true);
-            xlApp.Quit();
-        }
+        //public void closeExcelApp()
+        //{
+        //    wb.SaveAs(path + "\\highscorestest.xls");
+        //    wb.Close(true);
+        //    xlApp.Quit();
+        //}
 
         public void showHighScores()
         {

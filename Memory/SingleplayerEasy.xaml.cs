@@ -2,13 +2,9 @@
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
-
 using System.Media;
 using System.IO;
-
 using System.Xml;
-
-
 using System.Configuration;
 
 namespace Memory
@@ -44,8 +40,6 @@ namespace Memory
             this.mainWindow = mainWindow;
             DataContext = this;
             scoreLabel.Content = "Score: " + grid.getScore().ToString();
-
-
         }
 
         /// <summary>
@@ -69,7 +63,6 @@ namespace Memory
                     Timer.Stop();
 
                     MessageBox.Show(uPlayer.getName());
-
                 }
 
                 if (time <= 10)
@@ -118,9 +111,7 @@ namespace Memory
             {
                 MessageBox.Show("Start Game");
                 Timer.Start();
-
             }
-
         }
 
 
@@ -145,7 +136,6 @@ namespace Memory
         {
             this.Close();
             mainWindow.Show();
-
         }
 
         /// <summary>

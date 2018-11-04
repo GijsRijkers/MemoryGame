@@ -14,7 +14,7 @@
                     <GradientStop Color="#FFD37200"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <Grid x:Name="Gamegrid" Margin="0,4,192,92" Background="White"/>
+            <Grid x:Name="Gamegrid" Margin="0,0,192,97" Background="White"/>
             <Button Content="Hoofdmenu" HorizontalAlignment="Left" Height="33" Margin="967,490,0,0" VerticalAlignment="Top" Width="160" Click="TerugKlick" Foreground="White">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -39,18 +39,18 @@
                 </Button.Effect>
             </Button>
             <Image HorizontalAlignment="Center" Height="60" VerticalAlignment="Top" Width="270" Source="Resources/Logo.png" Margin="905,4,-28,0"/>
-            <Button Content="Geluid  aan" HorizontalAlignment="Right" Margin="0,0,104,296" VerticalAlignment="Bottom" Width="77" Click="Button_Click" Background="#FF31A813" Foreground="White" Height="31" RenderTransformOrigin="-3.074,1.991">
+            <Button Content="Geluid  aan" HorizontalAlignment="Right" Margin="0,0,94,296" VerticalAlignment="Bottom" Width="77" Click="Button_Click" Background="#FF31A813" Foreground="White" Height="31" RenderTransformOrigin="-3.074,1.991">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Button Content="Geluid uit" HorizontalAlignment="Right" Margin="0,0,21,296" Width="77" Background="#FFCA1818" Foreground="White" Click="Button_Click_1" Height="30" VerticalAlignment="Bottom">
+            <Button Content="Geluid uit" HorizontalAlignment="Right" Margin="0,0,12,296" Width="77" Background="#FFCA1818" Foreground="White" Click="Button_Click_1" Height="31" VerticalAlignment="Bottom">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
 
-            <Button x:Name="btnResetTime" Content="ResetTime" HorizontalAlignment="Left" Height="33" Margin="967,440,0,0" VerticalAlignment="Top" Width="160" Background="#FFE77D13" Click="ResetTimeKlick" Foreground="White">
+            <Button x:Name="btnResetTime" Content="Reset het spel" HorizontalAlignment="Left" Height="33" Margin="967,440,0,0" VerticalAlignment="Top" Width="160" Background="#FFE77D13" Click="ResetTimeKlick" Foreground="White">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
