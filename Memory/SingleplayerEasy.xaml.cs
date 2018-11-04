@@ -22,7 +22,7 @@ namespace Memory
         private const int NR_OF_ROWS = 4;
         MemoryGrid grid;
         private MainWindow mainWindow;
-        private Player uPlayer;
+        public Player uPlayer;
 
         /// <summary>
         /// Dit is de constructor van de Singleplayer class. In de constructor wordt alles wat voorbereid moet worden, voorbereid.
@@ -31,7 +31,7 @@ namespace Memory
         public SingleplayerEasy(MainWindow mainWindow)
         {
             InitializeComponent();
-            grid = new MemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS);
+            grid = new MemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS, this);
             //ResetGrid = new MemoryGrid();
             Timer = new DispatcherTimer();
             Timer.Interval = new TimeSpan(0, 0, 1);
@@ -104,8 +104,8 @@ namespace Memory
             btnStartPauze.Content = btnStartPauze.Content == "Start" ? "Pause" : "Start";
             if (btnStartPauze.Content == "Start")
             {
-                MessageBox.Show("Pause Game");
                 Timer.Stop();
+                MessageBox.Show("Pause Game");
             }
             else
             {
@@ -132,7 +132,7 @@ namespace Memory
         /// </summary>
         /// <param name="sender">Sender, de gebruiker</param>
         /// <param name="e">Name of EventArgs</param>
-        private void TerugKlick(object sender, RoutedEventArgs e)
+        private void returnToMainMenu(object sender, RoutedEventArgs e)
         {
             this.Close();
             mainWindow.Show();
@@ -143,7 +143,7 @@ namespace Memory
         /// </summary>
         /// <param name="sender">Sender, de gebruiker</param>
         /// <param name="e">Name of EventArgs (actionlistener)</param>
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void startMusic(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
             player.PlayLooping();
@@ -155,7 +155,7 @@ namespace Memory
         /// </summary>
         /// <param name="sender">Sender, de gebruiker</param>
         /// <param name="e">Name of EventArgs (actionlistener)</param>
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void stopMusic(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
             player.Stop();
@@ -181,6 +181,5 @@ namespace Memory
             scoreLabel.Content = "Score: " + grid.getScore();
         }
     }
-
 }
 
