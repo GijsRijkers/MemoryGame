@@ -6,47 +6,73 @@
         xmlns:local="clr-namespace:Memory"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1028" Visibility="Visible" WindowStartupLocation="CenterScreen">
-    <Grid x:Name="Page" Height="600" VerticalAlignment="Top" Margin="0,0,0,-31" HorizontalAlignment="Left" Width="1374">
+    <Grid x:Name="Page" Height="600" VerticalAlignment="Top" Margin="0,0,0,-31" HorizontalAlignment="Left" Width="1374" RenderTransformOrigin="0.373,0.493">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FFD37200" Offset="1"/>
+                <GradientStop Color="#FFE200FF"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1060*"/>
             <ColumnDefinition Width="125*"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="293*"/>
         </Grid.ColumnDefinitions>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                <GradientStop Color="White" Offset="1"/>
-                <GradientStop Color="#FFE200FF"/>
-            </LinearGradientBrush>
-        </Grid.Background>
         <Image HorizontalAlignment="Center" Height="228" VerticalAlignment="Top" Width="476" Source="Resources/Logo.png" Margin="300,0,207,0"/>
-        <Button Content="Singleplayer" HorizontalAlignment="Center" VerticalAlignment="Top" Width="240" Margin="394,259,349,0" Height="63" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="ShowNameSelectSP">
+        <Button Content="Singleplayer" HorizontalAlignment="Center" VerticalAlignment="Top" Width="240" Margin="394,259,349,0" Height="63" Foreground="White" FontWeight="Bold" FontSize="24" Click="ShowNameSelectSP">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEBAC26" Offset="0"/>
+                    <GradientStop Color="#FFEA4F24" Offset="0.99"/>
+                    <GradientStop Color="#FFDF5822" Offset="0.84"/>
+                </LinearGradientBrush>
+            </Button.Background>
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Content="Multiplayer" HorizontalAlignment="Center" VerticalAlignment="Top" Width="240" Margin="394,327,349,0" Height="63" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="MultiplayerClick" >
+        <Button Content="Multiplayer" HorizontalAlignment="Center" VerticalAlignment="Top" Width="240" Margin="394,327,349,0" Height="63" Foreground="White" FontWeight="Bold" FontSize="24" Click="MultiplayerClick" BorderBrush="#FF707070" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEB7B26" Offset="0"/>
+                    <GradientStop Color="#FFF93600" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Content="Highscores" HorizontalAlignment="Center" VerticalAlignment="Top" Width="240" Margin="394,395,349,0" Height="63" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="HigscoresClick" >
+        <Button Content="Highscores" HorizontalAlignment="Center" VerticalAlignment="Top" Width="240" Margin="394,395,349,0" Height="63" Foreground="White" FontWeight="Bold" FontSize="24" Click="HigscoresClick" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE5561C" Offset="0"/>
+                    <GradientStop Color="#FFDA2727" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Content="Afsluiten" HorizontalAlignment="Center" VerticalAlignment="Top" Width="240" Margin="394,463,349,0" Height="63" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="CloseApp" >
+        <Button Content="Afsluiten" HorizontalAlignment="Center" VerticalAlignment="Top" Width="240" Margin="394,463,349,0" Height="63" Foreground="White" FontWeight="Bold" FontSize="24" Click="CloseApp" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFCE2727" Offset="0"/>
+                    <GradientStop Color="#FFB61A1A" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="82,0,0,59" VerticalAlignment="Bottom" Click="Button_Click_1" Background="Black" Content="Geluid aan" Foreground="White" Height="40" Width="70" Opacity="0.7">
+        <Button HorizontalAlignment="Left" Margin="82,0,0,59" VerticalAlignment="Bottom" Click="Button_Click_1" Content="Geluid aan" Foreground="White" Height="40" Width="70" Opacity="0.7" Background="#FFF93600">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Content="Geluid uit" HorizontalAlignment="Left" Margin="172,0,0,59" VerticalAlignment="Bottom" Width="70" Click="Button_Click" Height="40" Background="Black" Foreground="White" Opacity="0.7">
+        <Button Content="Geluid uit" HorizontalAlignment="Left" Margin="172,0,0,59" VerticalAlignment="Bottom" Width="70" Click="Button_Click" Height="40" Foreground="White" Opacity="0.7" Background="#FFE51E16">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

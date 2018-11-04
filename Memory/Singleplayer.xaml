@@ -11,49 +11,53 @@
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFFD04FF" Offset="1"/>
-                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FFD37200"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <Grid x:Name="Gamegrid" Margin="0,4,192,93" Background="White"/>
-            <Button Content="Hoofdmenu" HorizontalAlignment="Left" Height="33" Margin="967,493,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="TerugKlick" Foreground="White">
+           
+            <Grid x:Name="Gamegrid" Margin="0,4,192,92" Background="White"/>
+            <Button Content="Hoofdmenu" HorizontalAlignment="Left" Height="33" Margin="967,490,0,0" VerticalAlignment="Top" Width="160" Click="TerugKlick" Foreground="White">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFB11D0B" Offset="0"/>
+                        <GradientStop Color="#FFD31700" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="btnStartPauze" Content="Start/Pause" HorizontalAlignment="Left" Height="31" Margin="967,421,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="btnStartPauze_Click" Foreground="White">
+            <Button x:Name="btnStartPauze" Content="Start/Pause" HorizontalAlignment="Left" Height="31" Margin="967,391,0,0" VerticalAlignment="Top" Width="160" Background="#FF00567C" Click="btnStartPauze_Click" Foreground="White">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Label Content="HIER&#xD;&#xA;KOMT &#xD;&#xA;DE &#xD;&#xA;HIGH&#xD;&#xA;SCORE&#xD;&#xA;" HorizontalAlignment="Left" Height="250" Margin="981,104,0,0" VerticalAlignment="Top" Width="135" Background="{x:Null}" FontSize="48" RenderTransformOrigin="0.456,0.522"/>
+            <Label Content="HIER&#xD;&#xA;KOMT &#xD;&#xA;DE &#xD;&#xA;HIGH&#xD;&#xA;SCORE&#xD;&#xA;" HorizontalAlignment="Left" Height="198" Margin="981,147,0,0" VerticalAlignment="Top" Width="135" Background="{x:Null}" FontSize="48" RenderTransformOrigin="0.456,0.522"/>
             <TextBlock x:Name="TBCountDown" HorizontalAlignment="Right" Margin="0,87,45,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="60" Width="122" FontSize="26" FontFamily="Segoe UI Light"></TextBlock>
-            <Button Content="Opslaan" HorizontalAlignment="Left" Height="33" Margin="967,531,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="TerugKlick" Foreground="White">
+            <Button Content="Opslaan" HorizontalAlignment="Left" Height="33" Margin="967,537,0,0" VerticalAlignment="Top" Width="160" Background="#FF3D7C10" Click="TerugKlick" Foreground="White">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
             <Image HorizontalAlignment="Center" Height="60" VerticalAlignment="Top" Width="270" Source="Resources/Logo.png" Margin="905,4,-28,0"/>
-
-            <Button Content="Geluid  aan" HorizontalAlignment="Right" Margin="0,0,103,256" VerticalAlignment="Bottom" Width="77" Click="Button_Click" Background="Black" Foreground="White" Height="31" RenderTransformOrigin="-3.074,1.991">
-         
+            <Button Content="Geluid  aan" HorizontalAlignment="Right" Margin="0,0,104,296" VerticalAlignment="Bottom" Width="77" Click="Button_Click" Background="#FF31A813" Foreground="White" Height="31" RenderTransformOrigin="-3.074,1.991">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button Content="Geluid uit" HorizontalAlignment="Right" Margin="0,0,21,296" Width="77" Background="#FFCA1818" Foreground="White" Click="Button_Click_1" Height="30" VerticalAlignment="Bottom">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
 
-            <Button Content="Geluid uit" HorizontalAlignment="Right" Margin="0,0,20,256" VerticalAlignment="Bottom" Width="77" Background="Black" Foreground="White" Height="31" Click="Button_Click_1">
-
+            <Button x:Name="btnResetTime" Content="ResetTime" HorizontalAlignment="Left" Height="33" Margin="967,440,0,0" VerticalAlignment="Top" Width="160" Background="#FFE77D13" Click="ResetTimeKlick" Foreground="White">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
 
-            <Button x:Name="btnResetTime" Content="Reset" HorizontalAlignment="Left" Height="33" Margin="967,457,0,0" VerticalAlignment="Top" Width="160" Background="Black" Click="ResetTimeKlick" Foreground="White">
-                <Button.Effect>
-                    <DropShadowEffect/>
-                </Button.Effect>
-            </Button>
-          
+
             <Label Content="Score: " Name="scoreLabel" HorizontalAlignment="Left" Margin="967,73,0,0" VerticalAlignment="Top"/>
 
         </Grid>
