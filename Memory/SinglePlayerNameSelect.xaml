@@ -10,7 +10,7 @@
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FFD300EE" Offset="0"/>
-                <GradientStop Color="White" Offset="1"/>
+                <GradientStop Color="#FFD37200" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Image HorizontalAlignment="Center" Height="186" VerticalAlignment="Top" Width="576" Source="Resources/Logo.png" Margin="290,0,213,0" RenderTransformOrigin="0.66,0.5"/>
@@ -34,17 +34,23 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Button Content="Terug" HorizontalAlignment="Center" VerticalAlignment="Top" Width="108" Margin="385,315,587.8,0" Height="43" Background="Black" Foreground="White" FontWeight="Bold" FontSize="24" Click="BackToMainMenuClick">
+        <Button Content="Terug" HorizontalAlignment="Center" VerticalAlignment="Top" Width="108" Margin="385,315,587.8,0" Height="43" Background="#FFFFAF1C" Foreground="White" FontWeight="Bold" FontSize="24" Click="BackToMainMenuClick">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Content="Start makkelijk" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="505,315,445.8,0" Height="43" Background="Black" Foreground="White" FontWeight="Bold" FontSize="16" Click="startSpGameEasy">
+        <Button Content="Start makkelijk" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="505,315,445.8,0" Height="43" Background="#FF71D41E" Foreground="White" FontWeight="Bold" FontSize="16" Click="startSpGameEasy">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Content="Start moeilijk" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="645,315,305.8,0" Height="43" Background="Black" Foreground="White" FontWeight="Bold" FontSize="16" Click="startSpGame">
+        <Button Content="Start moeilijk" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="645,315,305.8,0" Height="43" Foreground="White" FontWeight="Bold" FontSize="16" Click="startSpGame">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFCB4A16" Offset="0"/>
+                    <GradientStop Color="#FFFF0E0E" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
