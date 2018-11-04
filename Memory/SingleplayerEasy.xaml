@@ -40,7 +40,7 @@
             </Button>
           
             <Image HorizontalAlignment="Center" Height="60" VerticalAlignment="Top" Width="270" Source="Resources/voslogo.png" Margin="905,4,-28,0"/>
-            <Button Content="Geluid  aan" HorizontalAlignment="Right" Margin="0,0,104,296" VerticalAlignment="Bottom" Width="77" Click="Button_Click" Background="#FF31A813" Foreground="White" Height="31" RenderTransformOrigin="-3.074,1.991">
+            <Button Content="Geluid  aan" HorizontalAlignment="Right" Margin="0,0,104,296" VerticalAlignment="Bottom" Width="77" Click="startMusic" Background="#FF31A813" Foreground="White" Height="31" RenderTransformOrigin="-3.074,1.991">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
