@@ -39,7 +39,12 @@
                 </Button.Effect>
             </Button>
             
-            <Button x:Name="Geluiduit" Content="Geluid uit" HorizontalAlignment="Right" Margin="0,0,14,140" VerticalAlignment="Bottom" Width="75" Background="#FFCA1818" Foreground="White" Height="31" Click="Geluiduit_Click">
+            <Button x:Name="Geluiduit" Content="Geluid uit" HorizontalAlignment="Right" Margin="0,0,22,140" VerticalAlignment="Bottom" Width="75" Background="#FFCA1818" Foreground="White" Height="31" Click="Geluiduit_Click">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="Geluidaan" Content="Geluid aan" HorizontalAlignment="Right" Margin="0,0,102,140" VerticalAlignment="Bottom" Width="75" Background="Green" Foreground="White" Height="31" Click="Geluidaan_Click">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
