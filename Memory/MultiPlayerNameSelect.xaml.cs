@@ -88,5 +88,10 @@ namespace Memory
 
             MultiplayerWin.Show();
         }
+
+        private void Player1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

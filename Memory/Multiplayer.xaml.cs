@@ -69,7 +69,7 @@ namespace Memory
         private void MultiplayerClose(object sender, EventArgs e)
         {
             this.Close();
-            mainWindow.Show();
+            this.mainWindow.Show();
 
             
         }
@@ -81,7 +81,7 @@ namespace Memory
         private void TerugKlick(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            mainWindow.Show();
+            this.mainWindow.Show();
 
         }
 

@@ -70,7 +70,7 @@ namespace Memory
         private void BackToMainMenuClick(object sender, RoutedEventArgs e)
         {
             this.Close();
-            mainWindow.Show();
+            this.mainWindow.Show();
            
         }
   

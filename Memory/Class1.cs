@@ -197,7 +197,7 @@ namespace Memory
             {
                 this.card1 = (Image)sender;
             }
-
+            card.IsEnabled = false; // doubleclick disabled
             if (card1 != null && card2 != null)
             {
                 var x = card1;
@@ -205,7 +205,7 @@ namespace Memory
                 {
                     matchedImageList.Add(card1.Uid);
                     handsfull = true;
-
+                    
                     score += 10;
                 }
                 else
