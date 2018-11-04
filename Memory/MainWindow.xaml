@@ -20,7 +20,7 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="293*"/>
         </Grid.ColumnDefinitions>
-        <Image HorizontalAlignment="Center" Height="228" VerticalAlignment="Top" Width="476" Source="Resources/Logo.png" Margin="300,0,207,0"/>
+        <Image HorizontalAlignment="Center" Height="228" VerticalAlignment="Top" Width="476" Source="Resources/voslogo.png" Margin="300,0,207,0"/>
         <Button Content="Singleplayer" HorizontalAlignment="Center" VerticalAlignment="Top" Width="240" Margin="394,259,349,0" Height="63" Foreground="White" FontWeight="Bold" FontSize="24" Click="ShowNameSelectSP">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

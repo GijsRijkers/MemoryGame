@@ -186,6 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\sound.wav" />
+    <Resource Include="Resources\Voslogo.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="ExcelAdaptorLib">
