@@ -197,7 +197,7 @@ namespace Memory
             {
                 this.card1 = (Image)sender;
             }
-            card.IsEnabled = false; // doubleclick disabled
+          //  card.IsEnabled = false; // doubleclick disabled
             if (card1 != null && card2 != null)
             {
                 var x = card1;
