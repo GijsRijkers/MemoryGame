@@ -31,7 +31,6 @@
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Label Content="HIER&#xD;&#xA;KOMT &#xD;&#xA;DE &#xD;&#xA;HIGH&#xD;&#xA;SCORE&#xD;&#xA;" HorizontalAlignment="Left" Height="198" Margin="981,147,0,0" VerticalAlignment="Top" Width="135" Background="{x:Null}" FontSize="48" RenderTransformOrigin="0.456,0.522"/>
             <TextBlock x:Name="TBCountDown" HorizontalAlignment="Right" Margin="0,87,45,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="60" Width="122" FontSize="26" FontFamily="Segoe UI Light"></TextBlock>
             <Button Content="Opslaan" HorizontalAlignment="Left" Height="33" Margin="967,537,0,0" VerticalAlignment="Top" Width="160" Background="#FF3D7C10" Foreground="White">
                 <Button.Effect>
@@ -40,7 +39,7 @@
             </Button>
           
             <Image HorizontalAlignment="Center" Height="60" VerticalAlignment="Top" Width="270" Source="Resources/voslogo.png" Margin="905,4,-28,0"/>
-            <Button Content="Geluid  aan" HorizontalAlignment="Right" Margin="0,0,104,296" VerticalAlignment="Bottom" Width="77" Click="startMusic" Background="#FF31A813" Foreground="White" Height="31" RenderTransformOrigin="-3.074,1.991">
+            <Button Content="Geluid  aan" HorizontalAlignment="Right" Margin="0,0,98,296" VerticalAlignment="Bottom" Width="77" Click="startMusic" Background="#FF31A813" Foreground="White" Height="31" RenderTransformOrigin="-3.074,1.991">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>

@@ -32,16 +32,16 @@
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Label Content="Highscore" HorizontalAlignment="Left" Height="51" Margin="969,153,0,0" VerticalAlignment="Top" Width="135" Background="{x:Null}" FontSize="20" RenderTransformOrigin="0.5,0.5"/>
+            <Label Content="Hoogste score" HorizontalAlignment="Left" Height="51" Margin="969,153,0,0" VerticalAlignment="Top" Width="150" Background="{x:Null}" FontSize="20" RenderTransformOrigin="0.5,0.5"/>
             <TextBlock x:Name="TBCountDown" HorizontalAlignment="Right" Margin="0,87,45,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="60" Width="122" FontSize="26" FontFamily="Segoe UI Light"></TextBlock>
             <Button Content="Opslaan" HorizontalAlignment="Left" Height="33" Margin="967,537,0,0" VerticalAlignment="Top" Width="160" Background="#FF3D7C10" Foreground="White">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-          
+
             <Image HorizontalAlignment="Center" Height="60" VerticalAlignment="Top" Width="270" Source="Resources/voslogo.png" Margin="905,4,-28,0"/>
-            <Button Content="Geluid  aan" HorizontalAlignment="Right" Margin="0,0,104,296" VerticalAlignment="Bottom" Width="77" Click="startMusic" Background="#FF31A813" Foreground="White" Height="31" RenderTransformOrigin="-3.074,1.991">
+            <Button Content="Geluid  aan" HorizontalAlignment="Right" Margin="0,0,98,296" VerticalAlignment="Bottom" Width="77" Click="startMusic" Background="#FF31A813" Foreground="White" Height="31" RenderTransformOrigin="-3.074,1.991">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
@@ -60,7 +60,7 @@
 
 
             <Label Content="Score: " Name="scoreLabel" HorizontalAlignment="Left" Margin="967,73,0,0" VerticalAlignment="Top"/>
-            <Label Content="Geen Highscores &#xD;&#xA;gevonden.." HorizontalAlignment="Left" Margin="968,182,0,0" VerticalAlignment="Top" Height="86" Width="155"/>
+            <TextBlock x:Name="highScores" HorizontalAlignment="Right" Margin="0,193,16,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="130" Width="157" FontSize="26" FontFamily="Segoe UI Light" Text=""></TextBlock>
 
         </Grid>
     </Grid>

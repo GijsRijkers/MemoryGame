@@ -8,6 +8,7 @@ using System.Xml;
 using System.Configuration;
 using System.Runtime.InteropServices;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Collections.Generic;
 
 namespace Memory
 {
@@ -33,7 +34,6 @@ namespace Memory
         private object misValue;
         public int lastUsedRow;
         public int lastUsedColumn;
-        private int[,] highscoresArray;
 
         /// <summary>
         /// Dit is de constructor van de Singleplayer class. In de constructor wordt alles wat voorbereid moet worden, voorbereid. 
@@ -43,7 +43,6 @@ namespace Memory
         {
             InitializeComponent();
             grid = new MemoryGrid(Gamegrid, NR_OF_COLS, NR_OF_ROWS, this);
-            //ResetGrid = new MemoryGrid();
             Timer = new DispatcherTimer();
             Timer.Interval = new TimeSpan(0, 0, 1);
             Timer.Tick += Timer_Tick;
@@ -63,7 +62,6 @@ namespace Memory
             this.xlWorkSheet = wb.Worksheets.get_Item(1);
             this.lastUsedRow = 0;
             this.lastUsedColumn = 0;
-            this.highscoresArray = new int[,] { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };
         }
 
         /// <summary>
@@ -79,6 +77,8 @@ namespace Memory
         /// <param name="e">Name of EventArgs (actionlistener)</param>
         private void Timer_Tick(object sender, EventArgs e)
         {
+            getHSNames();
+
             if (time > 0)
             {
                 // Controleert of de gebruiker daadwerkelijk heeft gewonnen. Wanneer de getImageCount 8 is, dan heeft de speler alle kaarten omgedraaid.
@@ -243,9 +243,45 @@ namespace Memory
         //    xlApp.Quit();
         //}
 
+        String names;
+        String scores;
+        public void getHSNames()
+        {
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string path = string.Format("{0}Resources\\highscores", System.IO.Path.GetFullPath(System.IO.Path.Combine(RunningPath, @"..\..\")));
+
+            object misValue = System.Reflection.Missing.Value;
+
+            wb = xlApp.Workbooks.Open(path + "\\highscoresGMHard.xls", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
+            xlWorkSheet = wb.Worksheets.get_Item(1);
+
+            int totalColumns = xlWorkSheet.UsedRange.Columns.Count;
+            int totalRows = xlWorkSheet.UsedRange.Rows.Count;
+
+            Dictionary<String, String> hsDictionary = new Dictionary<String, String>();
+
+            for (int i = 2; i <= totalRows; i++)
+            {
+                names = xlWorkSheet.get_Range("B" + i).Value.ToString();
+                scores = xlWorkSheet.get_Range("C" + i).Value.ToString();
+                hsDictionary.Add(names, scores);
+            }
+
+            foreach (KeyValuePair<String, String> item in hsDictionary)
+            {
+               highScores.Text = item.ToString();
+            }
+        }
+
         public void showHighScores()
         {
-           // Code will be here, don't worry.
+            // Code will be here, don't worry.
+        }
+
+        public void stop()
+        {
+            wb.Close(true);
+            xlApp.Quit();
         }
     }
  }
