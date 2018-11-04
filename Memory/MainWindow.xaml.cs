@@ -26,8 +26,10 @@ namespace Memory
     public partial class MainWindow : Window
     {
 
-
-        //MemoryGrid ResetGrid;
+        public Excel.Application xlApp;
+        public Excel.Workbook xlWorkBook;
+        public Excel.Worksheet xlWorkSheet;
+        public object misValue;
 
         /// <summary>
         /// Constructor van de MainWindow class (deze). 
@@ -35,7 +37,11 @@ namespace Memory
         public MainWindow()
         {
             InitializeComponent();
-            getWorkSheet();
+            initializeWorkSheet();
+            this.xlApp = new Microsoft.Office.Interop.Excel.Application();
+            this.misValue = System.Reflection.Missing.Value;
+            this.xlWorkBook = xlApp.Workbooks.Add(misValue);
+            this.xlWorkSheet = xlWorkBook.Worksheets.get_Item(1);
         }
 
         /// <summary>
@@ -107,27 +113,24 @@ namespace Memory
         /// <summary>
         /// Zoekt de Excel worksheet voor de highscores.
         /// </summary>
-        private void getWorkSheet()
+        private void initializeWorkSheet()
         {
             // Het verbinden van de path die nodig om de locatie te vinden van de Excel worksheet (highscores.xlsx).
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
             string path = string.Format("{0}Resources\\highscores", System.IO.Path.GetFullPath(System.IO.Path.Combine(RunningPath, @"..\..\")));
-            if (!File.Exists(path + "\\highscores.xls"))
+            if (!File.Exists(path + "\\highscorestest.xls"))
             {
-                    Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                object misValue = System.Reflection.Missing.Value;
+                xlWorkBook = xlApp.Workbooks.Add(misValue);
+                xlWorkSheet = xlWorkBook.Worksheets.get_Item(1);
 
-                    Excel.Workbook xlWorkBook;
-                    Excel.Worksheet xlWorkSheet;
-                    object misValue = System.Reflection.Missing.Value;
-
-                    xlWorkBook = xlApp.Workbooks.Add(misValue);
-                    xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
                     xlWorkSheet.Cells[1, 1] = "ID";
                     xlWorkSheet.Cells[1, 2] = "Name";
-                    xlWorkSheet.Cells[1, 2] = "Score";
+                    xlWorkSheet.Cells[1, 3] = "Score";
 
-                    xlWorkBook.SaveAs(path + "\\highscores.xls", FileFormat: Excel.XlFileFormat.xlWorkbookNormal, Password: misValue, WriteResPassword: misValue, ReadOnlyRecommended: misValue, CreateBackup: misValue, AccessMode: Excel.XlSaveAsAccessMode.xlExclusive, ConflictResolution: misValue, AddToMru: misValue, TextCodepage: misValue, TextVisualLayout: misValue, Local: misValue);
+                    xlWorkSheet.SaveAs(path + "\\highscorestest.xls");
                     xlWorkBook.Close(true, misValue, misValue);
                     xlApp.Quit();
 
