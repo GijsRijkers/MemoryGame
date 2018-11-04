@@ -2,13 +2,9 @@
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
-
 using System.Media;
 using System.IO;
-
 using System.Xml;
-
-
 using System.Configuration;
 using System.Runtime.InteropServices;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -37,7 +33,7 @@ namespace Memory
         private object misValue;
         public int lastUsedRow;
         public int lastUsedColumn;
-        private String[] userNamesArray;
+        private int[,] highscoresArray;
 
         /// <summary>
         /// Dit is de constructor van de Singleplayer class. In de constructor wordt alles wat voorbereid moet worden, voorbereid. 
@@ -63,11 +59,11 @@ namespace Memory
             // Excel Application variables
             this.xlApp = mainWindow.xlApp;
             this.misValue = System.Reflection.Missing.Value;
-            this.wb = xlApp.Workbooks.Open(path + "\\highscorestest.xls"); // Dit geeft error. Needs to be fixed.
+            this.wb = xlApp.Workbooks.Open(path + "\\highscoresGMHard.xls");
             this.xlWorkSheet = wb.Worksheets.get_Item(1);
             this.lastUsedRow = 0;
             this.lastUsedColumn = 0;
-            this.userNamesArray = new string[4];
+            this.highscoresArray = new int[,] { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };
         }
 
         /// <summary>
@@ -131,15 +127,14 @@ namespace Memory
             btnStartPauze.Content = btnStartPauze.Content == "Start" ? "Pause" : "Start";
             if (btnStartPauze.Content == "Start")
             {
-                MessageBox.Show("Pause Game");
                 Timer.Stop();
+                MessageBox.Show("Het spel is gepauzeerd! Druk op Start om weer verder te spelen.");
             }
             else
             {
-                MessageBox.Show("Start Game");
+                MessageBox.Show("Het spel is weer gestart! Veel plezier!");
                 Timer.Start();
             }
-
         }
 
         /// <summary>
@@ -149,7 +144,7 @@ namespace Memory
         /// <param name="e">Name of EventArgs</param>
         private void SingleplayerClose(object sender, EventArgs e)
         {
-            closeExcelApp();
+            //closeExcelApp();
             Timer.Stop(); // Timer.Stop toegevoegd aangezien dit nog niet gedaan was.
             mainWindow.Show();
         }
@@ -159,9 +154,9 @@ namespace Memory
         /// </summary>
         /// <param name="sender">Sender, de gebruiker</param>
         /// <param name="e">Name of EventArgs</param>
-        private void TerugKlick(object sender, RoutedEventArgs e)
+        private void returnToMainMenu(object sender, RoutedEventArgs e)
         {
-            closeExcelApp();
+            //closeExcelApp();
             this.Hide();
             mainWindow.Show();
         }
@@ -171,7 +166,7 @@ namespace Memory
         /// </summary>
         /// <param name="sender">Sender, de gebruiker</param>
         /// <param name="e">Name of EventArgs (actionlistener)</param>
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void startMusic(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
             player.PlayLooping();
@@ -182,7 +177,7 @@ namespace Memory
         /// </summary>
         /// <param name="sender">Sender, de gebruiker</param>
         /// <param name="e">Name of EventArgs (actionlistener)</param>
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void stopMusic(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
             player.Stop();
@@ -196,7 +191,7 @@ namespace Memory
         private void ResetTimeKlick(object sender, RoutedEventArgs e)
         {
             this.Close();
-            closeExcelApp();
+            //closeExcelApp();
             SinglePlayerNameSelect singleplayernameselect = new SinglePlayerNameSelect(this);
             singleplayernameselect.Show();
         }
@@ -236,17 +231,17 @@ namespace Memory
                 xlWorkSheet.Cells[i + 1, 3] = grid.getScore();
             }
 
-            wb.SaveAs(path + "\\highscorestest.xls");
+            wb.SaveAs(path + "\\highscoresGMHard.xls");
             wb.Close(true);
             xlApp.Quit();
         }
 
-        public void closeExcelApp()
-        {
-            wb.SaveAs(path + "\\highscorestest.xls");
-            wb.Close(true);
-            xlApp.Quit();
-        }
+        //public void closeExcelApp()
+        //{
+        //    wb.SaveAs(path + "\\highscorestest.xls");
+        //    wb.Close(true);
+        //    xlApp.Quit();
+        //}
 
         public void showHighScores()
         {

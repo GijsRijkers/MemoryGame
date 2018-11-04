@@ -14,9 +14,9 @@
                     <GradientStop Color="#FFD37200"/>
                 </LinearGradientBrush>
             </Grid.Background>
-           
-            <Grid x:Name="Gamegrid" Margin="0,4,192,92" Background="White"/>
-            <Button Content="Hoofdmenu" HorizontalAlignment="Left" Height="33" Margin="967,490,0,0" VerticalAlignment="Top" Width="160" Click="TerugKlick" Foreground="White">
+
+            <Grid x:Name="Gamegrid" Margin="0,0,192,97" Background="White"/>
+            <Button Content="Hoofdmenu" HorizontalAlignment="Left" Height="33" Margin="967,490,0,0" VerticalAlignment="Top" Width="160" Click="returnToMainMenu" Foreground="White">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFB11D0B" Offset="0"/>
@@ -32,26 +32,27 @@
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Label Content="HIER&#xD;&#xA;KOMT &#xD;&#xA;DE &#xD;&#xA;HIGH&#xD;&#xA;SCORE&#xD;&#xA;" HorizontalAlignment="Left" Height="198" Margin="981,147,0,0" VerticalAlignment="Top" Width="135" Background="{x:Null}" FontSize="48" RenderTransformOrigin="0.456,0.522"/>
+            <Label Content="Highscore" HorizontalAlignment="Left" Height="51" Margin="969,153,0,0" VerticalAlignment="Top" Width="135" Background="{x:Null}" FontSize="20" RenderTransformOrigin="0.5,0.5"/>
             <TextBlock x:Name="TBCountDown" HorizontalAlignment="Right" Margin="0,87,45,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="60" Width="122" FontSize="26" FontFamily="Segoe UI Light"></TextBlock>
-            <Button Content="Opslaan" HorizontalAlignment="Left" Height="33" Margin="967,537,0,0" VerticalAlignment="Top" Width="160" Background="#FF3D7C10" Click="TerugKlick" Foreground="White">
+            <Button Content="Opslaan" HorizontalAlignment="Left" Height="33" Margin="967,537,0,0" VerticalAlignment="Top" Width="160" Background="#FF3D7C10" Foreground="White">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
+          
             <Image HorizontalAlignment="Center" Height="60" VerticalAlignment="Top" Width="270" Source="Resources/voslogo.png" Margin="905,4,-28,0"/>
             <Button Content="Geluid  aan" HorizontalAlignment="Right" Margin="0,0,104,296" VerticalAlignment="Bottom" Width="77" Click="Button_Click" Background="#FF31A813" Foreground="White" Height="31" RenderTransformOrigin="-3.074,1.991">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Button Content="Geluid uit" HorizontalAlignment="Right" Margin="0,0,21,296" Width="77" Background="#FFCA1818" Foreground="White" Click="Button_Click_1" Height="30" VerticalAlignment="Bottom">
+            <Button Content="Geluid uit" HorizontalAlignment="Right" Margin="0,0,14,296" Width="78" Background="#FFCA1818" Foreground="White" Click="stopMusic" Height="31" VerticalAlignment="Bottom">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
 
-            <Button x:Name="btnResetTime" Content="ResetTime" HorizontalAlignment="Left" Height="33" Margin="967,440,0,0" VerticalAlignment="Top" Width="160" Background="#FFE77D13" Click="ResetTimeKlick" Foreground="White">
+            <Button x:Name="btnResetTime" Content="Reset het spel" HorizontalAlignment="Left" Height="33" Margin="967,440,0,0" VerticalAlignment="Top" Width="160" Background="#FFE77D13" Click="ResetTimeKlick" Foreground="White">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
@@ -59,6 +60,7 @@
 
 
             <Label Content="Score: " Name="scoreLabel" HorizontalAlignment="Left" Margin="967,73,0,0" VerticalAlignment="Top"/>
+            <Label Content="Geen Highscores &#xD;&#xA;gevonden.." HorizontalAlignment="Left" Margin="968,182,0,0" VerticalAlignment="Top" Height="86" Width="155"/>
 
         </Grid>
     </Grid>

@@ -16,7 +16,7 @@
                 </LinearGradientBrush>
             </Grid.Background>
 
-            <Grid x:Name="Gamegrid" Margin="0,4,192,10" Background="White" MouseDown="Gamegrid_MouseDown"/>
+            <Grid x:Name="Gamegrid" Margin="0,0,192,12" Background="White" MouseDown="Gamegrid_MouseDown"/>
 
 
             <Button Content="Hoofdmenu" HorizontalAlignment="Left" Height="33" Margin="967,493,0,0" VerticalAlignment="Top" Width="160" Background="#FFD31700" Click="TerugKlick" Foreground="White">
@@ -31,24 +31,17 @@
                 </Button.Effect>
             </Button>
 
+
             <Image HorizontalAlignment="Center" Height="60" VerticalAlignment="Top" Width="270" Source="Resources/voslogo.png" Margin="905,4,-28,0"/>
             <Button Content="Reset" HorizontalAlignment="Left" Height="33" Margin="967,452,0,0" VerticalAlignment="Top" Width="160" Background="#FFE77D13" Click="ResetClick" Foreground="White">
-
-
-
-
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
 
-            <Image HorizontalAlignment="Center" Height="60" VerticalAlignment="Top" Width="270" Source="Resources/voslogo.png" Margin="905,4,-28,0"/>
-            <Button x:Name="geluidaan" Content="Geluid aan" HorizontalAlignment="Right" Margin="0,0,101,140" VerticalAlignment="Bottom" Width="79" Background="#FF31A813" Foreground="White" Height="31" Click="geluidaan_Click">
-                <Button.Effect>
-                    <DropShadowEffect/>
-                </Button.Effect>
+    </Button.Effect>
             </Button>
-            <Button x:Name="Geluiduit" Content="Geluid uit" HorizontalAlignment="Right" Margin="0,0,20,140" VerticalAlignment="Bottom" Width="75" Background="#FFCA1818" Foreground="White" Height="31" Click="Geluiduit_Click">
+            <Button x:Name="Geluiduit" Content="Geluid uit" HorizontalAlignment="Right" Margin="0,0,14,140" VerticalAlignment="Bottom" Width="75" Background="#FFCA1818" Foreground="White" Height="31" Click="Geluiduit_Click">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>

@@ -143,10 +143,6 @@ namespace Memory
         
         private void CardClick(object sender, MouseButtonEventArgs e)
         {
-
-
-
-
             if (handsfull)
             {
                 handsfull = false;
@@ -186,19 +182,13 @@ namespace Memory
                     {
                         Player2Score += 1;
                     }
-
-
                 }
                 else
                 {
                     handsfull = true;
                     player1 = !player1;
                     player2 = !player2;
-
                 }
-
-
-
             }
         }
 
@@ -248,7 +238,6 @@ namespace Memory
             {
                 turn = "player2";
             }
-
             return turn;
         }
 

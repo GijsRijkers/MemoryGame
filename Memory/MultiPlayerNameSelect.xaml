@@ -13,6 +13,7 @@
                 <GradientStop Color="#FFD37200" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
+
         <Image HorizontalAlignment="Center" Height="186" VerticalAlignment="Top" Width="576" Source="Resources/voslogo.png" Margin="290,0,213,0" RenderTransformOrigin="0.66,0.5"/>
         <Label Content="Player 1" HorizontalAlignment="Left" Margin="385,218,0,0" VerticalAlignment="Top" Height="47" Width="134" FontSize="20" RenderTransformOrigin="0.863,0.447">
             <Label.RenderTransform>
@@ -24,19 +25,15 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox Name="Player1" HorizontalAlignment="Left" Height="54" Margin="384,256,0,0" TextWrapping="Wrap" Text="{Binding userNameP1}" VerticalAlignment="Top" Width="390" FontSize="35" TextChanged="Player1_TextChanged"/>
+        <TextBox Name="Player1" HorizontalAlignment="Left" Height="54" Margin="384,256,0,0" TextWrapping="Wrap" Text="{Binding userNameP1}" VerticalAlignment="Top" Width="390" FontSize="35"/>
         <Button Content="Terug" HorizontalAlignment="Center" VerticalAlignment="Top" Width="108" Margin="381,440,591.8,0" Height="43" Background="#FFFF0E0E" Foreground="White" FontWeight="Bold" FontSize="24" Click="BackToMainMenuClick">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
+            
         </Button>
         <Button Content="Start" HorizontalAlignment="Center" VerticalAlignment="Top" Width="280" Margin="494,440,306.8,0" Height="43" Foreground="White" FontWeight="Bold" FontSize="24" Click="startMpGame" Background="#FF4EBD1C">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
+            
         </Button>
         <TextBox Name ="Player2" HorizontalAlignment="Left" Height="54" Margin="384,370,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="390" FontSize="35"/>
-        <Label Content="Player 2" HorizontalAlignment="Left" Margin="385,330,0,0" VerticalAlignment="Top" Height="47" Width="134" FontSize="20" RenderTransformOrigin="0.863,0.447">
+        <Label Content="Naam voor speler 2:" HorizontalAlignment="Left" Margin="385,330,0,0" VerticalAlignment="Top" Height="47" Width="280" FontSize="20" RenderTransformOrigin="0.863,0.447">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

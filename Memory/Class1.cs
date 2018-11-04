@@ -31,6 +31,7 @@ namespace Memory
 
         private bool hasWon = false;
         private Singleplayer singlePlayer = null;
+        private SingleplayerEasy singleplayerEasy = null;
         private int score;
 
         public Player uPlayer;
@@ -69,7 +70,7 @@ namespace Memory
         /// <param name="grid">Is het speelveld</param>
         /// <param name="cols">Zijn de verticale rijen</param>
         /// <param name="rows">Zijn de horizontale rijen</param>
-        public MemoryGrid(Grid grid, int cols, int rows)
+        public MemoryGrid(Grid grid, int cols, int rows, SingleplayerEasy singlePlayerEasy)
         {
             this.cols = cols;
             this.rows = rows;
@@ -77,6 +78,7 @@ namespace Memory
             this.grid = grid;
 
             this.score = 0;
+            this.singleplayerEasy = singleplayerEasy;
 
             imageSources = GetImagesList();
 
@@ -219,6 +221,11 @@ namespace Memory
             if (singlePlayer != null)
             {
                 singlePlayer?.showScore();
+            }
+
+            if (singleplayerEasy != null)
+            {
+                singleplayerEasy?.showScore();
             }
 
         }

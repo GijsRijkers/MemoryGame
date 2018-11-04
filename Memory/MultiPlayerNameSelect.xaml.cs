@@ -32,7 +32,6 @@ namespace Memory
         /// <param name="mainWindow"></param>
         public MultiPlayerNameSelect(MainWindow mainWindow)
         {
-            
             InitializeComponent();
             this.mainWindow = mainWindow;
         }
@@ -43,12 +42,8 @@ namespace Memory
 
         public MultiPlayerNameSelect(Multiplayer multiPlayer)
         {
-
             InitializeComponent();
             this.multiPlayer = multiPlayer;
-            
-
-
         }
 
 
@@ -59,7 +54,6 @@ namespace Memory
         private void BackToMainMenuClick(object sender, RoutedEventArgs e)
         {
             this.Close();
-            
             mainWindow.Show();
         }
 
@@ -69,7 +63,6 @@ namespace Memory
         /// <returns></returns>
         public string ReturnPlayer1()
         {
-            
             return player1;
         }
 
@@ -79,7 +72,6 @@ namespace Memory
         /// <returns></returns>
         public string ReturnPlayer2()
         {
-            
             return player2;
         }
 
@@ -94,16 +86,7 @@ namespace Memory
             this.Close();
             Multiplayer MultiplayerWin = new Multiplayer(mainWindow, this);
 
-            
-            
             MultiplayerWin.Show();
-
-          
-        }
-
-        private void Player1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
