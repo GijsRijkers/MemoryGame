@@ -13,8 +13,9 @@
                 <GradientStop Color="#FFD37200" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image HorizontalAlignment="Center" Height="186" VerticalAlignment="Top" Width="576" Source="Resources/Logo.png" Margin="290,0,213,0" RenderTransformOrigin="0.66,0.5"/>
-        <Label Content="Vul je naam in:" HorizontalAlignment="Left" Margin="380,220,0,0" VerticalAlignment="Top" Height="47" Width="150" FontSize="20" RenderTransformOrigin="0.863,0.447">
+      
+        <Image HorizontalAlignment="Center" Height="186" VerticalAlignment="Top" Width="576" Source="Resources/voslogo.png" Margin="290,0,213,0" RenderTransformOrigin="0.66,0.5"/>
+        <Label Content="Nicknaam" HorizontalAlignment="Left" Margin="380,220,0,0" VerticalAlignment="Top" Height="47" Width="134" FontSize="20" RenderTransformOrigin="0.863,0.447">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
