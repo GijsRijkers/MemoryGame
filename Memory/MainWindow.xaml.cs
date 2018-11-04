@@ -36,7 +36,8 @@ namespace Memory
         public MainWindow()
         {
             InitializeComponent();
-            initializeWorkSheet();
+            initializeWorkSheetGameModeHard();
+            initializeWorkSheetGameModeEasy();
             this.xlApp = new Microsoft.Office.Interop.Excel.Application();
             this.misValue = System.Reflection.Missing.Value;
             this.xlWorkBook = xlApp.Workbooks.Add(misValue);
@@ -112,12 +113,12 @@ namespace Memory
         /// <summary>
         /// Zoekt de Excel worksheet voor de highscores.
         /// </summary>
-        private void initializeWorkSheet()
+        private void initializeWorkSheetGameModeHard()
         {
             // Het verbinden van de path die nodig om de locatie te vinden van de Excel worksheet (highscores.xlsx).
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
             string path = string.Format("{0}Resources\\highscores", System.IO.Path.GetFullPath(System.IO.Path.Combine(RunningPath, @"..\..\")));
-            if (!File.Exists(path + "\\highscorestest.xls"))
+            if (!File.Exists(path + "\\highscoresGMHard.xls"))
             {
                 xlApp = new Microsoft.Office.Interop.Excel.Application();
                 object misValue = System.Reflection.Missing.Value;
@@ -129,7 +130,7 @@ namespace Memory
                     xlWorkSheet.Cells[1, 2] = "Name";
                     xlWorkSheet.Cells[1, 3] = "Score";
 
-                    xlWorkSheet.SaveAs(path + "\\highscorestest.xls");
+                    xlWorkSheet.SaveAs(path + "\\highscoresGMHard.xls");
                     xlWorkBook.Close(true, misValue, misValue);
                     xlApp.Quit();
 
@@ -138,5 +139,32 @@ namespace Memory
                     Marshal.ReleaseComObject(xlApp);
                 }
             }
+
+        private void initializeWorkSheetGameModeEasy()
+        {
+            // Het verbinden van de path die nodig om de locatie te vinden van de Excel worksheet (highscores.xlsx).
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string path = string.Format("{0}Resources\\highscores", System.IO.Path.GetFullPath(System.IO.Path.Combine(RunningPath, @"..\..\")));
+            if (!File.Exists(path + "\\highscoresGMEasy.xls"))
+            {
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                object misValue = System.Reflection.Missing.Value;
+                xlWorkBook = xlApp.Workbooks.Add(misValue);
+                xlWorkSheet = xlWorkBook.Worksheets.get_Item(1);
+
+
+                xlWorkSheet.Cells[1, 1] = "ID";
+                xlWorkSheet.Cells[1, 2] = "Name";
+                xlWorkSheet.Cells[1, 3] = "Score";
+
+                xlWorkSheet.SaveAs(path + "\\highscoresGMEasy.xls");
+                xlWorkBook.Close(true, misValue, misValue);
+                xlApp.Quit();
+
+                Marshal.ReleaseComObject(xlWorkSheet);
+                Marshal.ReleaseComObject(xlWorkBook);
+                Marshal.ReleaseComObject(xlApp);
+            }
         }
+    }
     } 

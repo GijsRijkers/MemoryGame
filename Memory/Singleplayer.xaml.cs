@@ -33,7 +33,7 @@ namespace Memory
         private object misValue;
         public int lastUsedRow;
         public int lastUsedColumn;
-        private String[] userNamesArray;
+        private int[,] highscoresArray;
 
         /// <summary>
         /// Dit is de constructor van de Singleplayer class. In de constructor wordt alles wat voorbereid moet worden, voorbereid. 
@@ -59,11 +59,11 @@ namespace Memory
             // Excel Application variables
             this.xlApp = mainWindow.xlApp;
             this.misValue = System.Reflection.Missing.Value;
-            this.wb = xlApp.Workbooks.Open(path + "\\highscorestest.xls");
+            this.wb = xlApp.Workbooks.Open(path + "\\highscoresGMHard.xls");
             this.xlWorkSheet = wb.Worksheets.get_Item(1);
             this.lastUsedRow = 0;
             this.lastUsedColumn = 0;
-            this.userNamesArray = new string[4];
+            this.highscoresArray = new int[,] { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };
         }
 
         /// <summary>
@@ -135,7 +135,6 @@ namespace Memory
                 MessageBox.Show("Het spel is weer gestart! Veel plezier!");
                 Timer.Start();
             }
-
         }
 
         /// <summary>
@@ -232,7 +231,7 @@ namespace Memory
                 xlWorkSheet.Cells[i + 1, 3] = grid.getScore();
             }
 
-            wb.SaveAs(path + "\\highscorestest.xls");
+            wb.SaveAs(path + "\\highscoresGMHard.xls");
             wb.Close(true);
             xlApp.Quit();
         }
