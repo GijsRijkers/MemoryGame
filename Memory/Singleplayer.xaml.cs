@@ -59,7 +59,7 @@ namespace Memory
             // Excel Application variables
             this.xlApp = mainWindow.xlApp;
             this.misValue = System.Reflection.Missing.Value;
-            this.wb = xlApp.Workbooks.Open(path + "\\highscorestest.xls"); // Dit geeft error. Needs to be fixed.
+            this.wb = xlApp.Workbooks.Open(path + "\\highscorestest.xls");
             this.xlWorkSheet = wb.Worksheets.get_Item(1);
             this.lastUsedRow = 0;
             this.lastUsedColumn = 0;
@@ -127,12 +127,12 @@ namespace Memory
             btnStartPauze.Content = btnStartPauze.Content == "Start" ? "Pause" : "Start";
             if (btnStartPauze.Content == "Start")
             {
-                MessageBox.Show("Pause Game");
                 Timer.Stop();
+                MessageBox.Show("Het spel is gepauzeerd! Druk op Start om weer verder te spelen.");
             }
             else
             {
-                MessageBox.Show("Start Game");
+                MessageBox.Show("Het spel is weer gestart! Veel plezier!");
                 Timer.Start();
             }
 
@@ -155,7 +155,7 @@ namespace Memory
         /// </summary>
         /// <param name="sender">Sender, de gebruiker</param>
         /// <param name="e">Name of EventArgs</param>
-        private void TerugKlick(object sender, RoutedEventArgs e)
+        private void returnToMainMenu(object sender, RoutedEventArgs e)
         {
             //closeExcelApp();
             this.Hide();
@@ -167,7 +167,7 @@ namespace Memory
         /// </summary>
         /// <param name="sender">Sender, de gebruiker</param>
         /// <param name="e">Name of EventArgs (actionlistener)</param>
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void startMusic(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
             player.PlayLooping();
@@ -178,7 +178,7 @@ namespace Memory
         /// </summary>
         /// <param name="sender">Sender, de gebruiker</param>
         /// <param name="e">Name of EventArgs (actionlistener)</param>
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void stopMusic(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.sound);
             player.Stop();

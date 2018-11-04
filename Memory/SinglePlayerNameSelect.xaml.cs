@@ -100,9 +100,8 @@ namespace Memory
             SingleplayerEasy SingleplayerEasyWin = new SingleplayerEasy(mainWindow);
             userNameP1 = userNameP1.ToString();
             uHighScore = 0;
-
-            userNameP1 = userNameP1.ToString();
-            uHighScore = 0;
+            tempPlayerOne = new Player(userNameP1, uHighScore);
+            SingleplayerEasyWin.setPlayer(tempPlayerOne);
         }
     }
 }
